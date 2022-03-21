@@ -11,8 +11,9 @@ int main() {
     x = y = 1;
     status = Hit;
     PlayerBoard b;
+    Ships PlayerOneShips;
     b.setFieldStatus(x, y, status);
-
-
     std::cout << b.getFieldStatus(x, y);
+    b.placeShip(0,0,0,PlayerOneShips.getShipType(1).first);
+    std::cout << b.getFieldStatus(1,0);
 }
