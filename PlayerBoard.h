@@ -5,6 +5,8 @@
 #ifndef BATTLESHIPS_GAEM_PLAYERBOARD_H
 #define BATTLESHIPS_GAEM_PLAYERBOARD_H
 
+#include "Ship.h"
+
 const int BOARD_SIZE = 10;
 
 enum FieldStatus {
@@ -12,7 +14,8 @@ enum FieldStatus {
     Free = 1,
     Occupied = 2,
     Missed = 3,
-    Hit =  4
+    Hit =  4,
+    Unavailable = 0
 };
 
 class PlayerBoard {
@@ -22,9 +25,8 @@ public:
     FieldStatus getFieldStatus(int x, int y);
     //DEBUG ONLY
     void setFieldStatus(int x, int y, FieldStatus status);
-    void setShip(int x1, int x2, int y1, int y2);
     FieldStatus shootField(int x, int y);
+    void placeShip(int x, int y, int rotation, ShipType shipType);
 };
-
 
 #endif //BATTLESHIPS_GAEM_PLAYERBOARD_H
