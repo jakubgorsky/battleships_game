@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/battleships_gaem.iml" filepath="$PROJECT_DIR$/.idea/battleships_gaem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/battleships_gaem2.iml" filepath="$PROJECT_DIR$/.idea/battleships_gaem2.iml" />
     </modules>
   </component>
 </project>
