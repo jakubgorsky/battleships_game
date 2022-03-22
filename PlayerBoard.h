@@ -26,7 +26,7 @@ public:
     //DEBUG ONLY
     void setFieldStatus(int x, int y, FieldStatus status);
     FieldStatus shootField(int x, int y);
-    void placeShip(int x, int y, int rotation, ShipType shipType);
+    void placeShip(int x, int y, int rotation, const ShipType& shipType);
 };
 
 #endif //BATTLESHIPS_GAEM_PLAYERBOARD_H

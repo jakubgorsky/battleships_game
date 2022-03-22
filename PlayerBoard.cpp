@@ -12,7 +12,10 @@ void PlayerBoard::setFieldStatus(int x, int y, FieldStatus status) {
     Board[x][y] = status;
 }
 
-void PlayerBoard::placeShip(int x, int y, int rotation, ShipType shipType) {
+void PlayerBoard::placeShip(int x, int y, int rotation, const ShipType& shipType) {
+    if (x + shipType.size > BOARD_SIZE || y + shipType.size > BOARD_SIZE) {
+        return;
+    }
     if (rotation%2 == 0){
         for (int i = 0; i < shipType.size; i++){
             if(getFieldStatus(x+i, y) == Occupied){
