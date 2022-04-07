@@ -6,12 +6,14 @@
 #define BATTLESHIPS_GAEM_GUI_H
 
 #include <iostream>
+#include "PlayerBoard.h"
 
 class GUI {
 private:
     void display_menu();
 public:
     void GUI_HANDLER();
+    void PRINT_BOARD(PlayerBoard board);
 };
 
 #endif //BATTLESHIPS_GAEM_GUI_H

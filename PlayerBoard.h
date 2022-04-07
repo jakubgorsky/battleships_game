@@ -15,16 +15,23 @@ enum FieldStatus {
     Occupied = 2,
     Missed = 3,
     Hit =  4,
+    Sunken = 5,
     Unavailable = 0
 };
 
 class PlayerBoard {
 private:
-    FieldStatus Board[BOARD_SIZE][BOARD_SIZE];
+    FieldStatus Board[BOARD_SIZE][BOARD_SIZE]{};
+    void INITIALIZE_BOARD();
+    bool canPlace(int x, int y, int rotation, const ShipType& shipType);
 public:
-    FieldStatus getFieldStatus(int x, int y);
+    PlayerBoard(){
+        INITIALIZE_BOARD();
+    }
     //DEBUG ONLY
     void setFieldStatus(int x, int y, FieldStatus status);
+
+    FieldStatus getFieldStatus(int x, int y);
     FieldStatus shootField(int x, int y);
     void placeShip(int x, int y, int rotation, const ShipType& shipType);
 };
