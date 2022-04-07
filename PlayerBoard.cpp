@@ -14,13 +14,25 @@ void PlayerBoard::setFieldStatus(int x, int y, FieldStatus status) {
 }
 
 void PlayerBoard::placeShip(int x, int y, int rotation, const ShipType& shipType) {
-    if (x + shipType.size > BOARD_SIZE || y + shipType.size > BOARD_SIZE) {
+
+    if (x < 0 || y < 0 || x >= BOARD_SIZE || y >= BOARD_SIZE) {
         throw std::out_of_range("[ERROR] Can't place the ship on coordinates (" + std::to_string(x) + ";" + std::to_string(y) + ") with rotation " + std::to_string(rotation) + ".\n Reason: SHIP LANDS OUTSIDE BOARD");
     }
+    if (playerShips.getShipCount(shipType.size - 1) <= 0) {
+        throw std::invalid_argument("[ERROR] Can't place selected ship type. Reason: NOT ENOUGH SHIPS.");
+    }
     if (canPlace(x, y, rotation, shipType)){
-        for (int i = 0; i < shipType.size; i++){
-            setFieldStatus(x+i, y, Occupied);
+        if(!rotation%2){
+            for (int i = 0; i < shipType.size; i++){
+                setFieldStatus(x+i, y, Occupied);
+            }
         }
+        else {
+            for (int i = 0; i < shipType.size; i++){
+                setFieldStatus(x, y+i, Occupied);
+            }
+        }
+        playerShips.reduceShipCount(shipType.size - 1, 1);
     }
     else{
         throw std::invalid_argument("[ERROR] Can't place the ship on coordinates (" + std::to_string(x) + ";" + std::to_string(y) + ") with rotation " + std::to_string(rotation) + ".\n Reason: ONE OF THE FIELDS IS OCCUPIED.");
@@ -51,7 +63,10 @@ void PlayerBoard::INITIALIZE_BOARD() {
 }
 
 bool PlayerBoard::canPlace(int x, int y, int rotation, const ShipType &shipType) {
-    if (rotation%2 == 0){
+    if (!rotation%2){
+        if( x + shipType.size > BOARD_SIZE ) {
+            throw std::out_of_range("[ERROR] Can't place the ship on coordinates (" + std::to_string(x) + ";" + std::to_string(y) + ") with rotation " + std::to_string(rotation) + ".\n Reason: SHIP LANDS OUTSIDE BOARD");
+        }
         for (int i = 0; i < shipType.size; i++){
             if(getFieldStatus(x+i, y) == Occupied){
                 return false;
@@ -59,6 +74,9 @@ bool PlayerBoard::canPlace(int x, int y, int rotation, const ShipType &shipType)
         }
     }
     else{
+        if( y + shipType.size > BOARD_SIZE ) {
+            throw std::out_of_range("[ERROR] Can't place the ship on coordinates (" + std::to_string(x) + ";" + std::to_string(y) + ") with rotation " + std::to_string(rotation) + ".\n Reason: SHIP LANDS OUTSIDE BOARD");
+        }
         for (int i = 0; i < shipType.size; i++){
             if(getFieldStatus(x, y+i) == Occupied){
                 return false;

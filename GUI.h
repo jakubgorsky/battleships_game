@@ -13,7 +13,7 @@ private:
     void display_menu();
 public:
     void GUI_HANDLER();
-    void PRINT_BOARD(PlayerBoard board);
+    void PRINT_BOARD(PlayerBoard board, Ships playerShips);
 };
 
 #endif //BATTLESHIPS_GAEM_GUI_H

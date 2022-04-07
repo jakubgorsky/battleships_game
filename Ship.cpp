@@ -29,3 +29,7 @@ void Ships::reduceShipCount(int type, int amount) {
 std::pair<ShipType, int> Ships::getShipType(int type) {
     return ShipCount[type];
 }
+
+int Ships::getShipCount(int type) {
+    return ShipCount[type].second;
+}

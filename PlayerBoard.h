@@ -24,9 +24,11 @@ private:
     FieldStatus Board[BOARD_SIZE][BOARD_SIZE]{};
     void INITIALIZE_BOARD();
     bool canPlace(int x, int y, int rotation, const ShipType& shipType);
+    Ships &playerShips;
 public:
-    PlayerBoard(){
+    PlayerBoard(Ships &playerShips) : playerShips(playerShips) {
         INITIALIZE_BOARD();
+        this->playerShips = playerShips;
     }
     //DEBUG ONLY
     void setFieldStatus(int x, int y, FieldStatus status);

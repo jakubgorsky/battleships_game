@@ -20,22 +20,25 @@ void GUI::GUI_HANDLER() {
     //Will add mutex check
 }
 
-void GUI::PRINT_BOARD(PlayerBoard board){
-    fort::utf8_table table;
-    table.set_cell_text_align(fort::text_align::center);
-    table << fort::header;
-    table[0][0] = "X";
+void GUI::PRINT_BOARD(PlayerBoard board, Ships playerShips){
+    fort::utf8_table boardTable;
+    fort::utf8_table shipCount;
+    boardTable.set_cell_text_align(fort::text_align::center);
+    shipCount.set_cell_text_align(fort::text_align::center);
+    shipCount << fort::header;
+    boardTable << fort::header;
+    boardTable[0][0] = "X";
     std::string temp = "";
     for (int i = 1; i <= 10; i++){
         temp = char(64+i);
-        table[0][i] = temp;
+        boardTable[0][i] = temp;
     }
-    table << fort::endr;
+    boardTable << fort::endr;
 
     for (int i = 1; i <= 10; i++){
         temp = char(48+i);
         if (i == 10) { temp = "10";}
-        table[i][0] = temp;
+        boardTable[i][0] = temp;
         for(int j = 1; j <= 10; j++){
             switch(board.getFieldStatus(i-1, j-1)){
                 case -1:
@@ -64,9 +67,20 @@ void GUI::PRINT_BOARD(PlayerBoard board){
                     break;
             }
 //            temp = board.getFieldStatus(i-1, j-1);
-            table[i][j] = temp;
+            boardTable[i][j] = temp;
         }
-        table << fort::endr;
+        boardTable << fort::endr;
     }
-    std::cout << table.to_string() << std::endl;
+    shipCount[0][0] = "Ships:";
+    shipCount[0][0].set_cell_span(2);
+    shipCount << fort::endr;
+    for (int i = 1; i <= 5; i++){
+        std::pair<ShipType, int> tempShip = playerShips.getShipType(i-1);
+        shipCount[i][0] = tempShip.first.name;
+        shipCount[i][1] = std::to_string(playerShips.getShipCount(i-1));
+        shipCount << fort::endr;
+    }
+
+    std::cout << boardTable.to_string() << std::endl;
+    std::cout << shipCount.to_string() << std::endl;
 }

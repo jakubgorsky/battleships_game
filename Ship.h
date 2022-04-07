@@ -25,6 +25,7 @@ public:
     Ships();
     void reduceShipCount(int type, int amount);
     std::pair<ShipType, int> getShipType(int type);
+    int getShipCount(int type);
 };
 
 
