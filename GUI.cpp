@@ -6,21 +6,60 @@
 #include "third-party/libfort/fort.hpp"
 
 void GUI::display_menu() {
-    std::cout<<"===================================================== \n"
-             <<" \t\tMENU \t \n "
-             <<"===================================================== \n"
-             <<" 1.Place Ship\n"
-             <<" 2.Shoot\n"
-             <<" 3.Check Ships\n"
-             <<" 4.Check field status\n"
-             <<" 0.Exit\n";
+    std::cout<<"=====================================================\n"
+             <<" \t\tMENU\n"
+             <<"=====================================================\n"
+             <<"\t1.Place Ship\n"
+             <<"\t2.Shoot\n"
+             <<"\t3.Check Ships\n"
+             <<"\t4.Check field status\n"
+             <<"\t0.Exit\n";
 }
 
 void GUI::GUI_HANDLER() {
     //Will add mutex check
+    int choice{}, x{}, y{}, rotation{};
+    ShipType temp;
+    while(true){
+        system("clear");
+        display_menu();
+        std::cin>>choice;
+        switch(choice){
+            case 1:
+                system("clear");
+                std::cout << "Provide coordinates: \n"
+                    << "X: ";
+                std::cin >> x;
+                std::cout << "\nY: ";
+                std::cin >> y;
+                std::cout << "\nProvide rotation (0 - vertical, 1 - horizontal): ";
+                std::cin >> rotation;
+                std::cout << "\nChoose ship type:"
+                        << "\n\t Submarine (size 1): 1"
+                        << "\n\t Destroyer (size 2): 2"
+                        << "\n\t Cruiser (size 3): 3"
+                        << "\n\t Battleship (size 4): 4"
+                        << "\n\t Carrier (size 5): 5"
+                        << "\nSelection: ";
+                std::cin >> temp.size;
+                try {
+                    playerBoard.placeShip(x, y, rotation, temp);
+                }
+                catch(std::exception &e){
+                    std::cout << e.what() << std::endl;
+                }
+                std::cout << "Press a key to continue...";
+                std::cin.get();
+                break;
+            case 0:
+                return;
+            default:
+                return;
+        }
+    }
 }
 
-void GUI::PRINT_BOARD(PlayerBoard board, Ships playerShips){
+void GUI::PRINT_BOARD(){
     fort::utf8_table boardTable;
     fort::utf8_table shipCount;
     boardTable.set_cell_text_align(fort::text_align::center);
@@ -40,7 +79,7 @@ void GUI::PRINT_BOARD(PlayerBoard board, Ships playerShips){
         if (i == 10) { temp = "10";}
         boardTable[i][0] = temp;
         for(int j = 1; j <= 10; j++){
-            switch(board.getFieldStatus(i-1, j-1)){
+            switch(playerBoard.getFieldStatus(i-1, j-1)){
                 case -1:
                     temp = "D";
                     break;
@@ -83,4 +122,8 @@ void GUI::PRINT_BOARD(PlayerBoard board, Ships playerShips){
 
     std::cout << boardTable.to_string() << std::endl;
     std::cout << shipCount.to_string() << std::endl;
+}
+
+GUI::GUI(PlayerBoard &playerBoard, Ships &playerShips)
+        : playerBoard(playerBoard), playerShips(playerShips) {
 }

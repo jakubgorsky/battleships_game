@@ -10,10 +10,13 @@
 
 class GUI {
 private:
+    PlayerBoard &playerBoard;
+    Ships &playerShips;
     void display_menu();
 public:
+    GUI(PlayerBoard &playerBoard, Ships &playerShips);
     void GUI_HANDLER();
-    void PRINT_BOARD(PlayerBoard board, Ships playerShips);
+    void PRINT_BOARD();
 };
 
 #endif //BATTLESHIPS_GAEM_GUI_H

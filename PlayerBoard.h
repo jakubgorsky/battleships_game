@@ -26,7 +26,7 @@ private:
     bool canPlace(int x, int y, int rotation, const ShipType& shipType);
     Ships &playerShips;
 public:
-    PlayerBoard(Ships &playerShips) : playerShips(playerShips) {
+    explicit PlayerBoard(Ships &playerShips) : playerShips(playerShips) {
         INITIALIZE_BOARD();
         this->playerShips = playerShips;
     }
