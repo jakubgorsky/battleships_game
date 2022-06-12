@@ -1,0 +1,14 @@
+//
+// Created by Jakub Górski on 11/06/2022.
+//
+
+#ifndef BATTLESHIPS_GAME_DEFINITIONS_H
+#define BATTLESHIPS_GAME_DEFINITIONS_H
+
+#define SCREEN_WIDTH 1600
+#define SCREEN_HEIGHT 900
+#define SCREEN_TITLE "sonho poor"
+#define FPS 60
+#define FRAME_DELAY (1000/FPS)
+
+#endif //BATTLESHIPS_GAME_DEFINITIONS_H
