@@ -1,6 +1,6 @@
 # battleships++
 
-Remake of Battleship in C++ / OpenGL. Started as a hobby project, turned to be graduation project at uni.
+Started as a hobby project, turned to be graduation project at uni. Remake of Battleship in C++ / ~~OpenGL~~ SDL2. Due to complexity of OpenGL and little time I didn't manage to learn enough about OpenGL to be comfortable writing this remake in OpenGL, hence switched to SDL2.
 
 # Idea
 
