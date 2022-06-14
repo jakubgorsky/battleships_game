@@ -5,13 +5,9 @@
 #include "GameMaster.h"
 #include <SDL_image.h>
 #include "Map.h"
-//#include "Init.h"
-//#include "InputHandler.h"
-//#include "EventHandler.h"
-//#include "Definitions.h"
+#include "ECS.h"
+#include "Components.h"
 
-GameObject* selection;
-GameObject* mapTexture;
 Map* map;
 Map* grid;
 
@@ -31,10 +27,11 @@ int gridMap[15][25]{
         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
-
 };
 
 SDL_Renderer* GameMaster::renderer = nullptr;
+Manager manager;
+auto& newEntity(manager.addEntity());
 
 void GameMaster::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
@@ -80,6 +77,8 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     map = new Map();
     grid = new Map();
     grid->LoadMap(gridMap);
+
+    newEntity.addComponent<PositionComponent>();
 }
 
 void GameMaster::handleEvents() {
@@ -95,6 +94,8 @@ void GameMaster::handleEvents() {
 }
 
 void GameMaster::update() {
+    manager.update();
+//    PLOGD << "(" << newEntity.getComponent<PositionComponent>().x() << ", " << newEntity.getComponent<PositionComponent>().y() << ")";
 }
 
 void GameMaster::render() {

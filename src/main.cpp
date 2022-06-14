@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
     fs.close();
     plog::init(plog::debug, "../log.txt");
 
-    GameMaster *gameMaster = new GameMaster();
+    auto *gameMaster = new GameMaster();
 
     gameMaster->init(SCREEN_TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 
