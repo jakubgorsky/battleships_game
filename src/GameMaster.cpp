@@ -4,9 +4,11 @@
 
 #include "GameMaster.h"
 #include <SDL_image.h>
+#include <cmath>
 #include "Map.h"
 #include "ECS/ECS.h"
 #include "ECS/Components.h"
+#include "Vector2D.h"
 
 Map* map;
 Map* grid;
@@ -31,7 +33,8 @@ int gridMap[15][25]{
 
 SDL_Renderer* GameMaster::renderer = nullptr;
 Manager manager;
-auto& whiteRect(manager.addEntity());
+Entity& whiteRect(manager.addEntity());
+int mX, mY;
 
 void GameMaster::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
@@ -40,7 +43,7 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
         flags = SDL_WINDOW_FULLSCREEN;
     }
 
-    PLOGD << "Initializing game subsystems...";
+    PLOGI << "Initializing game subsystems...";
 
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0){
         PLOGE << "Failed initializing subsystems!\n";
@@ -48,8 +51,8 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
         return;
     }
 
-    PLOGD << "Game subsystems initialized successfully.";
-    PLOGD << "Initializing window...";
+    PLOGI << "Game subsystems initialized successfully.";
+    PLOGI << "Initializing window...";
 
     window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
     if(!window){
@@ -58,8 +61,8 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
         return;
     }
 
-    PLOGD << "Window initialized successfully.";
-    PLOGD << "Initializing renderer...";
+    PLOGI << "Window initialized successfully.";
+    PLOGI << "Initializing renderer...";
 
     renderer = SDL_CreateRenderer(window, -1, 0);
     if(!renderer){
@@ -69,10 +72,10 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     }
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     isRunning = true;
-    PLOGD << "Renderer initialized successfully.";
-    PLOGD << "Initializing renderer...";
+    PLOGI << "Renderer initialized successfully.";
+    PLOGI << "Initializing renderer...";
 
-    PLOGD << "Loading map texture...";
+    PLOGI << "Loading map texture...";
 
     map = new Map();
     grid = new Map();
@@ -80,8 +83,10 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
 
     //ecs impl
 
-    whiteRect.addComponent<PositionComponent>(4*64, 2*64);
+    whiteRect.addComponent<TransformComponent>(64, 64);
     whiteRect.addComponent<SpriteComponent>("../res/textures/whitesq.png");
+    whiteRect.getComponent<SpriteComponent>().setTransparent();
+    whiteRect.getComponent<SpriteComponent>().setAlpha(100);
 }
 
 void GameMaster::handleEvents() {
@@ -97,13 +102,18 @@ void GameMaster::handleEvents() {
 }
 
 void GameMaster::update() {
+    SDL_PumpEvents();
+    SDL_GetMouseState(&mX, &mY);
+    if((mX > 63 && mX < 704 && mY > 63 && mY < 704) || (mX > 896 && mX < 1536 && mY > 63 && mY < 704)) {
+        whiteRect.getComponent<SpriteComponent>().setAlpha(150);
+        whiteRect.getComponent<TransformComponent>().position.x = (float)(0 + 64 * floor((double)mX / 64));
+        whiteRect.getComponent<TransformComponent>().position.y = (float)(0 + 64 * floor((double)mY / 64));
+    }
+    else
+        whiteRect.getComponent<SpriteComponent>().setAlpha(0);
     manager.refresh();
     manager.update();
-
-    if(whiteRect.getComponent<PositionComponent>().x() > 64*9){
-        whiteRect.getComponent<SpriteComponent>().setTexture("../res/textures/blacksq.png");
-    }
-//    PLOGD << "(" << whiteRect.getComponent<PositionComponent>().x() << ", " << whiteRect.getComponent<PositionComponent>().y() << ")";
+//    PLOGI << "(" << whiteRect.getComponent<TransformComponent>().x() << ", " << whiteRect.getComponent<TransformComponent>().y() << ")";
 }
 
 void GameMaster::render() {
@@ -118,5 +128,5 @@ void GameMaster::clean() {
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
-    PLOGD << "Cleaned subsystems.";
+    PLOGI << "Cleaned subsystems.";
 }

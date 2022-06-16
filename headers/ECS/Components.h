@@ -6,7 +6,7 @@
 #define BATTLESHIPS_GAME_COMPONENTS_H
 
 #include "ECS.h"
-#include "PositionComponent.h"
+#include "TransformComponent.h"
 #include "SpriteComponent.h"
 
 #endif //BATTLESHIPS_GAME_COMPONENTS_H

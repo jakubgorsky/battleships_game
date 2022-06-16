@@ -18,7 +18,7 @@ public:
 
     void init() override {
 
-        position = &entity->getComponent<PositionComponent>();
+        transform = &entity->getComponent<TransformComponent>();
 
         srcRect.x = srcRect.y = 0;
         srcRect.w = srcRect.h = 64;
@@ -26,8 +26,15 @@ public:
     }
 
     void update() override {
-        destRect.x = position->x();
-        destRect.y = position->y();
+        if(transparent){
+            SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+            SDL_SetTextureAlphaMod(texture, alpha);
+        }
+        else {
+            SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_NONE);
+        }
+        destRect.x = (int)transform->position.x;
+        destRect.y = (int)transform->position.y;
     }
 
     void draw() override {
@@ -38,11 +45,24 @@ public:
         texture = TextureManager::LoadTexture(path);
     }
 
-private:
-    PositionComponent *position;
-    SDL_Texture *texture;
+    void setAlpha(int _alpha){
+        alpha = _alpha;
+    }
 
+    void setTransparent(){
+        transparent = true;
+    }
+    void unsetTransparent(){
+        transparent = false;
+    }
+
+private:
+    TransformComponent *transform{};
+    SDL_Texture *texture{};
     SDL_Rect srcRect{}, destRect{};
+
+    bool transparent{};
+    int alpha{};
 };
 
 #endif //BATTLESHIPS_GAME_SPRITECOMPONENT_H
