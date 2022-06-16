@@ -21,8 +21,8 @@ public:
         transform = &entity->getComponent<TransformComponent>();
 
         srcRect.x = srcRect.y = 0;
-        srcRect.w = srcRect.h = 64;
-        destRect.w = destRect.h = 64;
+        srcRect.w = transform->width;
+        srcRect.h = transform->height;
     }
 
     void update() override {
@@ -35,6 +35,8 @@ public:
         }
         destRect.x = (int)transform->position.x;
         destRect.y = (int)transform->position.y;
+        destRect.w = transform->width * transform->scale;
+        destRect.h = transform->height * transform->scale;
     }
 
     void draw() override {
@@ -55,6 +57,8 @@ public:
     void unsetTransparent(){
         transparent = false;
     }
+
+    ~SpriteComponent() override { SDL_DestroyTexture(texture); }
 
 private:
     TransformComponent *transform{};

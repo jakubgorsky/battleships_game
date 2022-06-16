@@ -6,28 +6,7 @@
 #define BATTLESHIPS_GAME_MAP_H
 
 #include "GameMaster.h"
-
-enum TEX {
-    water = 0,
-    gridtl = 1,
-    gridt = 2,
-    gridtr = 3,
-    gridml = 4,
-    gridm = 5,
-    gridmr = 6,
-    gridbl = 7,
-    gridb = 8,
-    gridbr = 9,
-    sand = 10,
-    sandtl = 11,
-    sandt = 12,
-    sandtr = 13,
-    sandml = 14,
-    sandmr = 15,
-    sandbl = 16,
-    sandb = 17,
-    sandbr = 18
-};
+#include "Definitions.h"
 
 class Map {
 public:

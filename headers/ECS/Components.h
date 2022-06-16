@@ -8,5 +8,6 @@
 #include "ECS.h"
 #include "TransformComponent.h"
 #include "SpriteComponent.h"
+#include "TileComponent.h"
 
 #endif //BATTLESHIPS_GAME_COMPONENTS_H

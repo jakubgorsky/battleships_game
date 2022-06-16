@@ -12,6 +12,9 @@ class TransformComponent : public Component {
 public:
     Vector2D position;
 
+    int height = 64, width = 64;
+    int scale = 1;
+
     TransformComponent() {
         position.x = position.y = 0.0f;
     }
@@ -19,6 +22,14 @@ public:
     TransformComponent(float x, float y){
         position.x = x;
         position.y = y;
+    }
+
+    TransformComponent(float x, float y, int _w, int _h, int _scale){
+        position.x = x;
+        position.y = y;
+        height = _h;
+        width = _w;
+        scale = _scale;
     }
 
     void update() override {

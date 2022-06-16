@@ -5,30 +5,12 @@
 #include "Map.h"
 #include "TextureManager.h"
 
-int background[15][25]{
-        { TEX::sandtl, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandtr, TEX::sand, TEX::sandtl, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandt, TEX::sandtr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr, TEX::sand, TEX::sandml, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::water, TEX::sandmr},
-        { TEX::sandbl, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandbr, TEX::sand, TEX::sandbl, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandb, TEX::sandbr},
-        { TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand},
-        { TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand},
-        { TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand, TEX::sand}
-};
-
 Map::Map() {
     for(int i = 0; i < 19; i++){
         textures.push_back(TextureManager::LoadTexture(("../res/textures/tiles/"+ std::to_string(i)+".png").c_str()));
     }
 
-    LoadMap(background);
+    LoadMap(DEF_BG);
 
     src.x = src.y = 0;
     src.h = src.w = 64;
