@@ -5,8 +5,8 @@
 #include "GameMaster.h"
 #include <SDL_image.h>
 #include "Map.h"
-#include "ECS.h"
-#include "Components.h"
+#include "ECS/ECS.h"
+#include "ECS/Components.h"
 
 Map* map;
 Map* grid;
@@ -31,7 +31,7 @@ int gridMap[15][25]{
 
 SDL_Renderer* GameMaster::renderer = nullptr;
 Manager manager;
-auto& newEntity(manager.addEntity());
+auto& whiteRect(manager.addEntity());
 
 void GameMaster::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
@@ -43,7 +43,7 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     PLOGD << "Initializing game subsystems...";
 
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0){
-        PLOGD << "Failed initializing subsystems!\n";
+        PLOGE << "Failed initializing subsystems!\n";
         isRunning = false;
         return;
     }
@@ -53,7 +53,7 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
 
     window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
     if(!window){
-        PLOGD << "Failed initializing window!";
+        PLOGE << "Failed initializing window!";
         isRunning = false;
         return;
     }
@@ -63,7 +63,7 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
 
     renderer = SDL_CreateRenderer(window, -1, 0);
     if(!renderer){
-        PLOGD << "Failed initializing renderer!";
+        PLOGE << "Failed initializing renderer!";
         isRunning = false;
         return;
     }
@@ -78,7 +78,10 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     grid = new Map();
     grid->LoadMap(gridMap);
 
-    newEntity.addComponent<PositionComponent>();
+    //ecs impl
+
+    whiteRect.addComponent<PositionComponent>(4*64, 2*64);
+    whiteRect.addComponent<SpriteComponent>("../res/textures/whitesq.png");
 }
 
 void GameMaster::handleEvents() {
@@ -94,14 +97,20 @@ void GameMaster::handleEvents() {
 }
 
 void GameMaster::update() {
+    manager.refresh();
     manager.update();
-//    PLOGD << "(" << newEntity.getComponent<PositionComponent>().x() << ", " << newEntity.getComponent<PositionComponent>().y() << ")";
+
+    if(whiteRect.getComponent<PositionComponent>().x() > 64*9){
+        whiteRect.getComponent<SpriteComponent>().setTexture("../res/textures/blacksq.png");
+    }
+//    PLOGD << "(" << whiteRect.getComponent<PositionComponent>().x() << ", " << whiteRect.getComponent<PositionComponent>().y() << ")";
 }
 
 void GameMaster::render() {
     SDL_RenderClear(renderer);
     map->DrawMap();
     grid->DrawMap();
+    manager.draw();
     SDL_RenderPresent(renderer);
 }
 

@@ -9,7 +9,7 @@ SDL_Texture *TextureManager::LoadTexture(const char *fileName) {
     SDL_Surface *surface = IMG_Load(fileName);
     SDL_Texture *texture = SDL_CreateTextureFromSurface(GameMaster::renderer, surface);
     if(!texture){
-        PLOGD << "TextureManager loading error: " << SDL_GetError();
+        PLOGE << "TextureManager loading error: " << SDL_GetError();
         return nullptr;
     }
     SDL_FreeSurface(surface);
