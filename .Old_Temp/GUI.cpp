@@ -3,7 +3,7 @@
 //
 
 #include "GUI.h"
-#include "third-party/libfort/fort.hpp"
+#include <libfort/fort.hpp>
 
 void GUI::display_menu() {
     std::cout<<"=====================================================\n"
@@ -21,12 +21,12 @@ void GUI::GUI_HANDLER() {
     int choice{}, x{}, y{}, rotation{};
     ShipType temp;
     while(true){
-        system("clear");
+        system("cls");
         display_menu();
         std::cin>>choice;
         switch(choice){
             case 1:
-                system("clear");
+                system("cls");
                 std::cout << "Provide coordinates: \n"
                     << "X: ";
                 std::cin >> x;
@@ -49,7 +49,7 @@ void GUI::GUI_HANDLER() {
                     std::cout << e.what() << std::endl;
                 }
                 std::cout << "Press a key to continue...";
-                std::cin.get();
+                _getwch();
                 break;
             case 0:
                 return;
@@ -124,6 +124,6 @@ void GUI::PRINT_BOARD(){
     std::cout << shipCount.to_string() << std::endl;
 }
 
-GUI::GUI(PlayerBoard &playerBoard, Ships &playerShips)
-        : playerBoard(playerBoard), playerShips(playerShips) {
+GUI::GUI(PlayerBoard &playerBoard, PlayerBoard &enemyBoard, Ships &playerShips, Ships &enemyShips)
+        : playerBoard(playerBoard), enemyBoard(enemyBoard), playerShips(playerShips), enemyShips(enemyShips){
 }

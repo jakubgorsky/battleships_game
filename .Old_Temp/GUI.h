@@ -11,10 +11,12 @@
 class GUI {
 private:
     PlayerBoard &playerBoard;
+    PlayerBoard &enemyBoard;
     Ships &playerShips;
+    Ships &enemyShips;
     void display_menu();
 public:
-    GUI(PlayerBoard &playerBoard, Ships &playerShips);
+    GUI(PlayerBoard &playerBoard, PlayerBoard &enemyBoard, Ships &playerShips, Ships &enemyShips);
     void GUI_HANDLER();
     void PRINT_BOARD();
 };
