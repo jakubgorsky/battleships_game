@@ -20,11 +20,15 @@ enum groupLabels : std::size_t {
     groupMarkings
 };
 
-enum GameState {
-    DEBUG = -1,
+enum GAMESTATE {
+    NULLSTATE = -1,
+    DEBUG = -11,
+    INIT = 0,
     PLACING = 1,
-    SHOOTING = 2,
-    WAITING = 3
+    PLAYER_TURN = 2,
+    AI_TURN = 3,
+    WON = 4,
+    LOST = 5
 };
 
 // Tilemap definitions
@@ -109,6 +113,33 @@ static int DEF_GRID_R[15][25]{
         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
         {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
+};
+
+// Board definitions
+
+#define BOARD_SIZE 10
+
+enum FieldStatus {
+    Default = -1,
+    Free = 1,
+    Occupied = 2,
+    Missed = 3,
+    Hit =  4,
+    Sunken = 5,
+    Unavailable = 0
+};
+
+static FieldStatus AI_DEBUG[BOARD_SIZE][BOARD_SIZE] {
+    {Free, Occupied, Occupied, Occupied, Free, Free, Free, Free, Free, Free},
+    {Free, Free, Free, Free, Free, Free, Free, Free, Free, Free},
+    {Free, Free, Free, Free, Free, Free, Free, Free, Occupied, Free},
+    {Free, Free, Free, Free, Free, Free, Free, Free, Free, Free},
+    {Occupied, Free, Free, Free, Occupied, Occupied, Free, Free, Free, Free},
+    {Occupied, Free, Free, Free, Free, Free, Free, Free, Free, Free},
+    {Occupied, Free, Occupied, Occupied, Free, Free, Free, Free, Free, Free},
+    {Occupied, Free, Free, Free, Free, Free, Free, Occupied, Free, Free},
+    {Free, Free, Free, Free, Free, Free, Free, Free, Free, Free},
+    {Free, Free, Free, Free, Free, Occupied, Occupied, Occupied, Occupied, Occupied}
 };
 
 

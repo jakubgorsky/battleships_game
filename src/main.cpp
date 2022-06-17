@@ -25,7 +25,6 @@ int main(int argc, char *argv[]){
     while(gameMaster->running()){
 
         frameStart = SDL_GetTicks();
-
         gameMaster->handleEvents();
         gameMaster->update();
         gameMaster->render();

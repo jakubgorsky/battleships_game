@@ -25,12 +25,16 @@ public:
 
     inline bool running() const { return isRunning; }
 
+    void setGameState(GAMESTATE state) { GAME_STATE = state; }
+    GAMESTATE getGameState() const { return GAME_STATE; }
+
     static void AddTile(int id, int x, int y);
     static SDL_Renderer* renderer;
     static SDL_Event event;
 private:
     bool isRunning{};
     SDL_Window *window{};
+    GAMESTATE GAME_STATE = NULLSTATE;
 };
 
 #endif //BATTLESHIPS_GAME_GAMEMASTER_H

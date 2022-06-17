@@ -18,6 +18,8 @@ public:
 
     static SDL_Texture* loadFont(const std::string &font_Path, int font_size, const std::string &message, const SDL_Color &color);
 
+    SDL_Rect getRect() const { return textRect; }
+
 protected:
 private:
     SDL_Texture *textTexture = nullptr;

@@ -10,6 +10,8 @@
 #include "ECS/ECS.h"
 #include "ECS/Components.h"
 #include <SDL_ttf.h>
+#include "PlayerBoard.h"
+#include "Ship.h"
 
 Map* map;
 Map* gridMap;
@@ -17,15 +19,19 @@ Map* gridMap;
 SDL_Renderer* GameMaster::renderer = nullptr;
 SDL_Event GameMaster::event;
 Manager manager;
-Entity& whiteRect(manager.addEntity());
 int mX, mY;
-bool placedL[2][10][10];
-bool placedR[2][10][10];
 double rotation;
 Text text;
+Ships player, ai;
+PlayerBoard *playerBoard = new PlayerBoard(player);
+PlayerBoard *aiBoard = new PlayerBoard(ai);
+int shipType = 0;
+Entity &boardHoverMarker(manager.addEntity());
+bool backgroundExists = false;
 
 void GameMaster::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
+    setGameState(GAMESTATE::INIT);
     int flags = 0;
     if(fullscreen){
         flags = SDL_WINDOW_FULLSCREEN;
@@ -73,93 +79,217 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
 
     map = new Map();
     gridMap = new Map();
-    gridMap->LoadMap(DEF_GRID_L);
-
-    for (auto& i : placedL){
-        for (auto& r : i){
-            for (auto& c : r){
-                c = false;
-            }
-        }
-    }
-    for (auto& i : placedR){
-        for (auto& r : i){
-            for (auto& c : r){
-                c = false;
-            }
-        }
-    }
+    gridMap->LoadMap(DEF_GRID_R);
 
     //ecs impl
 
-    whiteRect.addComponent<TransformComponent>(64, 64);
-    whiteRect.addComponent<SpriteComponent>("../res/textures/whitesq.png");
-    whiteRect.getComponent<SpriteComponent>().setTransparent();
-    whiteRect.getComponent<SpriteComponent>().setAlpha(100);
-    whiteRect.addGroup(groupMarkings);
-    Text text1("../res/fonts/Unibody_8_Bold.ttf", 40, "Test message", {255, 255, 255, 255});
-    text = text1;
+    boardHoverMarker.addComponent<TransformComponent>(64,64);
+    boardHoverMarker.addComponent<SpriteComponent>("../res/textures/whitesq.png");
+    boardHoverMarker.getComponent<SpriteComponent>().setTransparent();
+    boardHoverMarker.addGroup(groupMarkings);
+
+    for (int i = 0; i < BOARD_SIZE; i++){
+        for (int j = 0; j < BOARD_SIZE; j++){
+            aiBoard->setFieldStatus(i, j, AI_DEBUG[i][j]);
+        }
+    }
+    ai._debug_delete_ships();
+
+    setGameState(GAMESTATE::PLACING);
 }
 
 void GameMaster::handleEvents() {
     int x, y;
     SDL_PollEvent(&event);
+    SDL_PumpEvents();
+    SDL_GetMouseState(&mX, &mY);
+    x = (int)(0 + 64 * floor((double)mX / 64));
+    y = (int)(0 + 64 * floor((double)mY / 64));
     switch(event.type){
         case SDL_KEYDOWN:
-            if(event.key.keysym.sym == SDLK_r){
-                if(rotation >= 360)
-                    rotation = 0;
-                rotation+=90;
-                PLOGI << rotation;
-                break;
+            switch(event.key.keysym.sym) {
+                case SDLK_1:
+                    shipType = 0;
+                    break;
+                case SDLK_2:
+                    shipType = 1;
+                    break;
+                case SDLK_3:
+                    shipType = 2;
+                    break;
+                case SDLK_4:
+                    shipType = 3;
+                    break;
+                case SDLK_5:
+                    shipType = 4;
+                    break;
+                case SDLK_ESCAPE:
+                    isRunning = false;
+                    break;
+                case SDLK_SPACE:
+                    if(GAME_STATE == GAMESTATE::AI_TURN){
+                        int aiX = rand()%10;
+                        int aiY = rand()%10;
+                        FieldStatus statusToChange = playerBoard->shootField(aiX, aiY);
+                        while(statusToChange == Unavailable || statusToChange == Default) {
+                            aiX = rand()%10;
+                            aiY = rand()%10;
+                            statusToChange = playerBoard->shootField(aiX, aiY);
+                        }
+                        playerBoard->setFieldStatus(aiX, aiY, playerBoard->shootField(aiX, aiY));
+                        if(statusToChange == Hit){
+                            Entity& obj(manager.addEntity());
+                            obj.addComponent<TransformComponent>((aiY+14)*64, (aiX+1)*64);
+                            obj.addComponent<SpriteComponent>(TextureManager::LoadTexture("../res/textures/hit.png"));
+                            obj.getComponent<SpriteComponent>().setTransparent();
+                            obj.getComponent<SpriteComponent>().setAlpha(255);
+                            obj.addGroup(groupMarkings);
+                        }
+                        if(statusToChange == Missed) {
+                            Entity& obj(manager.addEntity());
+                            obj.addComponent<TransformComponent>((aiY+14)*64, (aiX+1)*64);
+                            obj.addComponent<SpriteComponent>(TextureManager::LoadTexture("../res/textures/missed.png"));
+                            obj.getComponent<SpriteComponent>().setTransparent();
+                            obj.getComponent<SpriteComponent>().setAlpha(255);
+                            obj.addGroup(groupMarkings);
+                        }
+                        setGameState(GAMESTATE::PLAYER_TURN);
+
+
+                    }
+                    break;
+                default:
+                    break;
             }
             break;
         case SDL_QUIT:
             isRunning = false;
             break;
         case SDL_MOUSEBUTTONDOWN:
-            SDL_PumpEvents();
-            SDL_GetMouseState(&mX, &mY);
-            x = (int)(0 + 64 * floor((double)mX / 64));
-            y = (int)(0 + 64 * floor((double)mY / 64));
-            if(x < 64 || (x > 640 && x < 896) || x > 1535 || y < 64 || y > 640){
+            if(event.button.button == SDL_BUTTON_RIGHT){
+                if (rotation == 1)
+                    rotation = 0;
+                else
+                    rotation = 1;
+                PLOGI << rotation;
                 break;
             }
-            if((x/64)-1 < 10 && placedL[0][(x/64)-1][(y/64)-1]){
+            if(((x < 64 || x > 703) && GAME_STATE != GAMESTATE::PLACING) || (x < 896 && GAME_STATE == GAMESTATE::PLACING) || x > 1535 || y < 64 || y > 703){
                 break;
             }
-            else if(x > 896 && x < 1536 && placedR[1][(x/64)-14][(y/64)-1]){
-                break;
-            }
-            else {
-                Entity& obj(manager.addEntity());
-                obj.addComponent<TransformComponent>((float)x, (float)y);
-                obj.addComponent<SpriteComponent>(("../res/textures/tiles/" + std::to_string(TEX::shipmid) + ".png").c_str());
-                obj.getComponent<SpriteComponent>().setTransparent();
-                obj.getComponent<SpriteComponent>().setAlpha(255);
-                obj.getComponent<SpriteComponent>().rotate(rotation);
-                obj.addGroup(groupShips);
-                if(x < 704){
-                    placedL[0][(x/64)-1][(y/64)-1] = true;
+            if(GAME_STATE == GAMESTATE::PLACING &&!(x > 896 && x < 1536 && playerBoard->getFieldStatus((y/64)-1, (x/64)-14) == Occupied)) {
+                if(playerBoard->placeShip((y/64)-1,(x/64)-14, (int)rotation, player.getShipType(shipType).first)){
+                    int t = 0;
+                    for (const auto& i : player.getShipType(shipType).first.textures) {
+                        Entity &obj(manager.addEntity());
+                        if((int)rotation%2){
+                            obj.addComponent<TransformComponent>((float) (x+t*64), (float) y);
+                        }
+                        else{
+                            obj.addComponent<TransformComponent>((float) x, (float) (y+t*64));
+                        }
+                        t++;
+
+                        obj.addComponent<SpriteComponent>(TextureManager::LoadTexture(i.c_str()));
+                        obj.getComponent<SpriteComponent>().setTransparent();
+                        obj.getComponent<SpriteComponent>().setAlpha(255);
+                        if((int)rotation%2){
+                            if(t == player.getShipType(shipType).first.size){
+                                obj.getComponent<SpriteComponent>().rotate((rotation+1)*90);
+                            }
+                            else{
+                                obj.getComponent<SpriteComponent>().rotate((rotation-1)*90);
+                            }
+                        }
+                        else{
+                            if(t == player.getShipType(shipType).first.size){
+                                obj.getComponent<SpriteComponent>().rotate((rotation-1)*90);
+                            }
+                            else{
+                                obj.getComponent<SpriteComponent>().rotate((rotation+1)*90);
+                            }
+                        }
+
+                        obj.addGroup(groupShips);
+                    }
                 }
-                else if(x > 704 && x < 1536){
-                    placedR[1][x-14][y-1] = true;
+                if(player.shipsLeft() == 0){
+                    GAME_STATE = GAMESTATE::AI_TURN;
+                    gridMap->LoadMap(DEF_GRID_L);
                 }
-                break;
             }
+            break;
+        case SDL_MOUSEBUTTONUP:
+            if(GAME_STATE == GAMESTATE::PLAYER_TURN && mX > 63 && mX < 703 && mY > 63 && mY < 703) {
+                FieldStatus statusToChange = aiBoard->shootField((y / 64) - 1, (x / 64) - 1);
+                if (statusToChange != Unavailable && statusToChange != Default) {
+                    aiBoard->setFieldStatus((y / 64) - 1, (x / 64) - 1, statusToChange);
+                    setGameState(GAMESTATE::AI_TURN);
+                    if(statusToChange == Hit){
+                        Entity& obj(manager.addEntity());
+                        obj.addComponent<TransformComponent>(x, y);
+                        obj.addComponent<SpriteComponent>(TextureManager::LoadTexture("../res/textures/hit.png"));
+                        obj.getComponent<SpriteComponent>().setTransparent();
+                        obj.getComponent<SpriteComponent>().setAlpha(255);
+                        obj.addGroup(groupMarkings);
+                    }
+                    if(statusToChange == Missed) {
+                        Entity& obj(manager.addEntity());
+                        obj.addComponent<TransformComponent>(x, y);
+                        obj.addComponent<SpriteComponent>(TextureManager::LoadTexture("../res/textures/missed.png"));
+                        obj.getComponent<SpriteComponent>().setTransparent();
+                        obj.getComponent<SpriteComponent>().setAlpha(255);
+                        obj.addGroup(groupMarkings);
+                    }
+                }
+            }
+            break;
     }
+    if(GAME_STATE == GAMESTATE::PLACING && (mX > 896 && mX < 1536 && mY > 63 && mY < 704)) {
+        boardHoverMarker.getComponent<SpriteComponent>().setAlpha(150);
+        boardHoverMarker.getComponent<TransformComponent>().position.x = (float)x;
+        boardHoverMarker.getComponent<TransformComponent>().position.y = (float)y;
+        if ((int) rotation % 2) {
+            boardHoverMarker.getComponent<TransformComponent>().scaleX = shipType+1;
+            boardHoverMarker.getComponent<TransformComponent>().scaleY = 1;
+        }
+        else{
+            boardHoverMarker.getComponent<TransformComponent>().scaleX = 1;
+            boardHoverMarker.getComponent<TransformComponent>().scaleY = shipType+1;
+        }
+    }
+    else if(GAME_STATE == GAMESTATE::PLAYER_TURN && (mX > 63 && mX < 704 && mY > 63 && mY < 704)) {
+        boardHoverMarker.getComponent<SpriteComponent>().setAlpha(150);
+        boardHoverMarker.getComponent<TransformComponent>().position.x = (float)x;
+        boardHoverMarker.getComponent<TransformComponent>().position.y = (float)y;
+        boardHoverMarker.getComponent<TransformComponent>().scaleX = 1;
+        boardHoverMarker.getComponent<TransformComponent>().scaleY = 1;
+    }
+    else
+        boardHoverMarker.getComponent<SpriteComponent>().setAlpha(0);
 }
 
 void GameMaster::update() {
-    SDL_PumpEvents();
-    SDL_GetMouseState(&mX, &mY);
-    if((mX > 63 && mX < 704 && mY > 63 && mY < 704) || (mX > 896 && mX < 1536 && mY > 63 && mY < 704)) {
-        whiteRect.getComponent<SpriteComponent>().setAlpha(150);
-        whiteRect.getComponent<TransformComponent>().position.x = (float)(0 + 64 * floor((double)mX / 64));
-        whiteRect.getComponent<TransformComponent>().position.y = (float)(0 + 64 * floor((double)mY / 64));
+    if(!aiBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING){
+        setGameState(GAMESTATE::WON);
+        Text textWon("../res/fonts/Unibody_8_Bold.ttf", 80, "You won!", {0, 255, 0, 255});
+        text = textWon;
     }
-    else
-        whiteRect.getComponent<SpriteComponent>().setAlpha(0);
+    if(!playerBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING){
+        setGameState(GAMESTATE::LOST);
+        Text textWon("../res/fonts/Unibody_8_Bold.ttf", 80, "You lost!", {255, 0, 0, 255});
+        text = textWon;
+    }
+    if((GAME_STATE == GAMESTATE::WON || GAME_STATE == GAMESTATE::LOST) && !backgroundExists){
+        Entity& background(manager.addEntity());
+        background.addComponent<TransformComponent>(0, 0, 1600, 900, 25, 15);
+        background.addComponent<SpriteComponent>(TextureManager::LoadTexture("../res/textures/blacksq.png"));
+        background.getComponent<SpriteComponent>().setTransparent();
+        background.getComponent<SpriteComponent>().setAlpha(100);
+        background.addGroup(groupMarkings);
+        backgroundExists = true;
+    }
+
     manager.refresh();
     manager.update();
 }
@@ -174,6 +304,7 @@ void GameMaster::render() {
     SDL_RenderClear(renderer);
     map->DrawMap();
     gridMap->DrawMap();
+
     for (auto& t : tiles){
         t->draw();
     }
@@ -186,7 +317,10 @@ void GameMaster::render() {
     for (auto& m : markings){
         m->draw();
     }
-    text.display(50, 50);
+
+    if(GAME_STATE == GAMESTATE::WON || GAME_STATE == GAMESTATE::LOST){
+        text.display((1600-text.getRect().w)/2, (900-text.getRect().h)/2);
+    }
     SDL_RenderPresent(renderer);
 }
 

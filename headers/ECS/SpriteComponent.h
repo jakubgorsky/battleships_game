@@ -12,6 +12,9 @@
 class SpriteComponent : public Component {
 public:
     SpriteComponent() = default;
+    explicit SpriteComponent(SDL_Texture* tex){
+        texture = tex;
+    }
     explicit SpriteComponent(const char* path){
         setTexture(path);
     }
@@ -35,8 +38,8 @@ public:
         }
         destRect.x = (int)transform->position.x;
         destRect.y = (int)transform->position.y;
-        destRect.w = transform->width * transform->scale;
-        destRect.h = transform->height * transform->scale;
+        destRect.w = transform->width * transform->scaleX;
+        destRect.h = transform->height * transform->scaleY;
     }
 
     void draw() override {

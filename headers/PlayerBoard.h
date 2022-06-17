@@ -6,36 +6,29 @@
 #define BATTLESHIPS_GAEM_PLAYERBOARD_H
 
 #include "Ship.h"
-
-const int BOARD_SIZE = 10;
-
-enum FieldStatus {
-    Default = -1,
-    Free = 1,
-    Occupied = 2,
-    Missed = 3,
-    Hit =  4,
-    Sunken = 5,
-    Unavailable = 0
-};
+#include "Definitions.h"
 
 class PlayerBoard {
 private:
     FieldStatus Board[BOARD_SIZE][BOARD_SIZE]{};
     void INITIALIZE_BOARD();
-    bool canPlace(int x, int y, int rotation, const ShipType& shipType);
+    bool canPlace(int x, int y, int rotation, const Ship& shipType);
     Ships &playerShips;
 public:
-    explicit PlayerBoard(Ships &playerShips) : playerShips(playerShips) {
+    PlayerBoard(Ships &playerShips) : playerShips(playerShips) {
         INITIALIZE_BOARD();
-        this->playerShips = playerShips;
     }
     //DEBUG ONLY
     void setFieldStatus(int x, int y, FieldStatus status);
 
     FieldStatus getFieldStatus(int x, int y);
     FieldStatus shootField(int x, int y);
-    void placeShip(int x, int y, int rotation, const ShipType& shipType);
+    bool placeShip(int x, int y, int rotation, const Ship& shipType);
+    PlayerBoard autoPlace(PlayerBoard& board, int index = 8);
+
+    bool shipsAlive();
+
+    void PrintBoardToLog(PlayerBoard board);
 };
 
 #endif //BATTLESHIPS_GAEM_PLAYERBOARD_H

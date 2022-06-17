@@ -13,7 +13,8 @@ public:
     Vector2D position;
 
     int height = 64, width = 64;
-    int scale = 1;
+    int scaleX = 1;
+    int scaleY = 1;
 
     TransformComponent() {
         position.x = position.y = 0.0f;
@@ -24,12 +25,13 @@ public:
         position.y = y;
     }
 
-    TransformComponent(float x, float y, int _w, int _h, int _scale){
+    TransformComponent(float x, float y, int _w, int _h, int _scalex, int _scaley){
         position.x = x;
         position.y = y;
         height = _h;
         width = _w;
-        scale = _scale;
+        scaleX = _scalex;
+        scaleY = _scaley;
     }
 
     void update() override {

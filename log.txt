@@ -1,11 +1,97 @@
-﻿2022-06-17 14:14:43.364 INFO  [25536] [GameMaster::init@34] Initializing game subsystems...
-2022-06-17 14:14:44.101 INFO  [25536] [GameMaster::init@47] Game subsystems initialized successfully.
-2022-06-17 14:14:44.101 INFO  [25536] [GameMaster::init@48] Initializing window...
-2022-06-17 14:14:44.120 INFO  [25536] [GameMaster::init@57] Window initialized successfully.
-2022-06-17 14:14:44.120 INFO  [25536] [GameMaster::init@58] Initializing renderer...
-2022-06-17 14:14:44.260 INFO  [25536] [GameMaster::init@69] Renderer initialized successfully.
-2022-06-17 14:14:44.260 INFO  [25536] [GameMaster::init@70] Initializing renderer...
-2022-06-17 14:14:44.260 INFO  [25536] [GameMaster::init@72] Loading map texture...
-2022-06-17 14:15:27.035 INFO  [25536] [GameMaster::handleEvents@113] 90
-2022-06-17 14:15:29.947 INFO  [25536] [GameMaster::handleEvents@113] 180
-2022-06-17 14:15:31.573 INFO  [25536] [GameMaster::clean@197] Cleaned subsystems.
+﻿2022-06-17 20:29:43.595 INFO  [16856] [GameMaster::init@40] Initializing game subsystems...
+2022-06-17 20:29:44.358 INFO  [16856] [GameMaster::init@53] Game subsystems initialized successfully.
+2022-06-17 20:29:44.358 INFO  [16856] [GameMaster::init@54] Initializing window...
+2022-06-17 20:29:44.378 INFO  [16856] [GameMaster::init@63] Window initialized successfully.
+2022-06-17 20:29:44.378 INFO  [16856] [GameMaster::init@64] Initializing renderer...
+2022-06-17 20:29:44.485 INFO  [16856] [GameMaster::init@75] Renderer initialized successfully.
+2022-06-17 20:29:44.485 INFO  [16856] [GameMaster::init@76] Initializing renderer...
+2022-06-17 20:29:44.485 INFO  [16856] [GameMaster::init@78] Loading map texture...
+2022-06-17 20:29:46.181 INFO  [16856] [GameMaster::handleEvents@174] 1
+2022-06-17 20:29:46.574 INFO  [16856] [GameMaster::handleEvents@174] 0
+2022-06-17 20:29:47.126 INFO  [16856] [GameMaster::handleEvents@174] 1
+2022-06-17 20:29:47.339 INFO  [16856] [GameMaster::handleEvents@174] 0
+2022-06-17 20:29:47.666 INFO  [16856] [GameMaster::handleEvents@174] 1
+2022-06-17 20:29:47.782 INFO  [16856] [GameMaster::handleEvents@174] 0
+2022-06-17 20:29:48.465 INFO  [16856] [GameMaster::handleEvents@174] 1
+2022-06-17 20:29:48.692 INFO  [16856] [GameMaster::handleEvents@174] 0
+2022-06-17 20:29:49.954 ERROR [16856] [PlayerBoard::placeShip@23] [ERROR] Can't place selected ship type. Reason: NOT ENOUGH SHIPS.
+2022-06-17 20:29:51.579 INFO  [16856] [GameMaster::handleEvents@174] 1
+2022-06-17 20:29:54.578 INFO  [16856] [GameMaster::handleEvents@174] 0
+2022-06-17 20:29:58.126 INFO  [16856] [PlayerBoard::shootField@51] field ( 8, 4) empty, missed.
+2022-06-17 20:29:58.126 INFO  [16856] [PlayerBoard::shootField@51] field ( 8, 4) empty, missed.
+2022-06-17 20:29:58.583 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 6) empty, missed.
+2022-06-17 20:29:58.929 INFO  [16856] [PlayerBoard::shootField@51] field ( 3, 1) empty, missed.
+2022-06-17 20:29:58.929 INFO  [16856] [PlayerBoard::shootField@51] field ( 3, 1) empty, missed.
+2022-06-17 20:29:59.323 INFO  [16856] [PlayerBoard::shootField@47] field ( 0, 3) occupied
+2022-06-17 20:29:59.456 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 0) empty, missed.
+2022-06-17 20:29:59.456 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 0) empty, missed.
+2022-06-17 20:29:59.670 INFO  [16856] [PlayerBoard::shootField@47] field ( 0, 1) occupied
+2022-06-17 20:29:59.754 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 0) empty, missed.
+2022-06-17 20:29:59.754 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 0) empty, missed.
+2022-06-17 20:30:00.097 INFO  [16856] [PlayerBoard::shootField@47] field ( 0, 2) occupied
+2022-06-17 20:30:01.733 INFO  [16856] [PlayerBoard::shootField@51] field ( 7, 6) empty, missed.
+2022-06-17 20:30:01.733 INFO  [16856] [PlayerBoard::shootField@51] field ( 7, 6) empty, missed.
+2022-06-17 20:30:02.461 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 5) empty, missed.
+2022-06-17 20:30:02.626 INFO  [16856] [PlayerBoard::shootField@47] field ( 5, 8) occupied
+2022-06-17 20:30:02.626 INFO  [16856] [PlayerBoard::shootField@47] field ( 5, 8) occupied
+2022-06-17 20:30:02.954 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 8) empty, missed.
+2022-06-17 20:30:03.083 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 3) empty, missed.
+2022-06-17 20:30:03.083 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 3) empty, missed.
+2022-06-17 20:30:03.247 INFO  [16856] [PlayerBoard::shootField@55] field ( 0, 8) unavailable
+2022-06-17 20:30:03.522 INFO  [16856] [PlayerBoard::shootField@55] field ( 0, 8) unavailable
+2022-06-17 20:30:03.780 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 7) empty, missed.
+2022-06-17 20:30:03.911 INFO  [16856] [PlayerBoard::shootField@55] field ( 1, 0) unavailable
+2022-06-17 20:30:03.911 INFO  [16856] [PlayerBoard::shootField@51] field ( 4, 3) empty, missed.
+2022-06-17 20:30:03.911 INFO  [16856] [PlayerBoard::shootField@51] field ( 4, 3) empty, missed.
+2022-06-17 20:30:04.108 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 7) empty, missed.
+2022-06-17 20:30:04.305 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 9) empty, missed.
+2022-06-17 20:30:04.305 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 9) empty, missed.
+2022-06-17 20:30:04.455 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 8) empty, missed.
+2022-06-17 20:30:04.737 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 9) empty, missed.
+2022-06-17 20:30:04.737 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 9) empty, missed.
+2022-06-17 20:30:04.970 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 9) empty, missed.
+2022-06-17 20:30:05.297 INFO  [16856] [PlayerBoard::shootField@47] field ( 4, 2) occupied
+2022-06-17 20:30:05.297 INFO  [16856] [PlayerBoard::shootField@47] field ( 4, 2) occupied
+2022-06-17 20:30:05.507 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 9) empty, missed.
+2022-06-17 20:30:05.803 INFO  [16856] [PlayerBoard::shootField@51] field ( 8, 2) empty, missed.
+2022-06-17 20:30:05.803 INFO  [16856] [PlayerBoard::shootField@51] field ( 8, 2) empty, missed.
+2022-06-17 20:30:06.196 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 9) empty, missed.
+2022-06-17 20:30:06.391 INFO  [16856] [PlayerBoard::shootField@51] field ( 4, 1) empty, missed.
+2022-06-17 20:30:06.391 INFO  [16856] [PlayerBoard::shootField@51] field ( 4, 1) empty, missed.
+2022-06-17 20:30:06.619 INFO  [16856] [PlayerBoard::shootField@47] field ( 2, 8) occupied
+2022-06-17 20:30:06.752 INFO  [16856] [PlayerBoard::shootField@55] field ( 5, 8) unavailable
+2022-06-17 20:30:06.752 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 4) empty, missed.
+2022-06-17 20:30:06.752 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 4) empty, missed.
+2022-06-17 20:30:07.011 INFO  [16856] [PlayerBoard::shootField@55] field ( 2, 8) unavailable
+2022-06-17 20:30:07.553 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 7) empty, missed.
+2022-06-17 20:30:07.861 INFO  [16856] [PlayerBoard::shootField@55] field ( 7, 6) unavailable
+2022-06-17 20:30:07.861 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 8) empty, missed.
+2022-06-17 20:30:07.861 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 8) empty, missed.
+2022-06-17 20:30:08.072 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 6) empty, missed.
+2022-06-17 20:30:08.206 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 6) empty, missed.
+2022-06-17 20:30:08.206 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 6) empty, missed.
+2022-06-17 20:30:08.452 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 6) empty, missed.
+2022-06-17 20:30:08.583 INFO  [16856] [PlayerBoard::shootField@47] field ( 2, 2) occupied
+2022-06-17 20:30:08.583 INFO  [16856] [PlayerBoard::shootField@47] field ( 2, 2) occupied
+2022-06-17 20:30:08.817 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 4) empty, missed.
+2022-06-17 20:30:09.098 INFO  [16856] [PlayerBoard::shootField@51] field ( 3, 7) empty, missed.
+2022-06-17 20:30:09.098 INFO  [16856] [PlayerBoard::shootField@51] field ( 3, 7) empty, missed.
+2022-06-17 20:30:09.462 INFO  [16856] [PlayerBoard::shootField@51] field ( 1, 5) empty, missed.
+2022-06-17 20:30:09.642 INFO  [16856] [PlayerBoard::shootField@47] field ( 4, 8) occupied
+2022-06-17 20:30:09.642 INFO  [16856] [PlayerBoard::shootField@47] field ( 4, 8) occupied
+2022-06-17 20:30:09.808 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 5) empty, missed.
+2022-06-17 20:30:09.988 INFO  [16856] [PlayerBoard::shootField@55] field ( 3, 1) unavailable
+2022-06-17 20:30:09.988 INFO  [16856] [PlayerBoard::shootField@55] field ( 5, 9) unavailable
+2022-06-17 20:30:09.988 INFO  [16856] [PlayerBoard::shootField@51] field ( 9, 0) empty, missed.
+2022-06-17 20:30:09.988 INFO  [16856] [PlayerBoard::shootField@51] field ( 9, 0) empty, missed.
+2022-06-17 20:30:10.219 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 4) empty, missed.
+2022-06-17 20:30:10.317 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 9) empty, missed.
+2022-06-17 20:30:10.317 INFO  [16856] [PlayerBoard::shootField@51] field ( 0, 9) empty, missed.
+2022-06-17 20:30:10.662 INFO  [16856] [PlayerBoard::shootField@51] field ( 4, 7) empty, missed.
+2022-06-17 20:30:10.729 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 4) empty, missed.
+2022-06-17 20:30:10.729 INFO  [16856] [PlayerBoard::shootField@51] field ( 2, 4) empty, missed.
+2022-06-17 20:30:11.009 INFO  [16856] [PlayerBoard::shootField@51] field ( 5, 8) empty, missed.
+2022-06-17 20:30:11.139 INFO  [16856] [PlayerBoard::shootField@55] field ( 4, 2) unavailable
+2022-06-17 20:30:11.139 INFO  [16856] [PlayerBoard::shootField@47] field ( 4, 4) occupied
+2022-06-17 20:30:11.139 INFO  [16856] [PlayerBoard::shootField@47] field ( 4, 4) occupied
+2022-06-17 20:30:12.068 INFO  [16856] [GameMaster::clean@331] Cleaned subsystems.
