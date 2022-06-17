@@ -16,6 +16,10 @@ SDL_Texture *TextureManager::LoadTexture(const char *fileName) {
     return texture;
 }
 
-void TextureManager::Draw(SDL_Texture *tex, SDL_Rect src, SDL_Rect dest) {
-    SDL_RenderCopy(GameMaster::renderer, tex, &src, &dest);
+void TextureManager::Draw(SDL_Texture *tex, SDL_Rect src, SDL_Rect dest, double angle) {
+    SDL_RenderCopyEx(GameMaster::renderer, tex, &src, &dest, angle, nullptr, SDL_FLIP_NONE);
+}
+
+void TextureManager::Draw(SDL_Texture *tex, SDL_Rect *src, SDL_Rect *dest, double angle) {
+    SDL_RenderCopyEx(GameMaster::renderer, tex, src, dest, angle, nullptr, SDL_FLIP_NONE);
 }

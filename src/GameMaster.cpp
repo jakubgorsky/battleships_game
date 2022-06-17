@@ -6,8 +6,10 @@
 #include <SDL_image.h>
 #include <cmath>
 #include "Map.h"
+#include "Text.h"
 #include "ECS/ECS.h"
 #include "ECS/Components.h"
+#include <SDL_ttf.h>
 
 Map* map;
 Map* gridMap;
@@ -19,6 +21,8 @@ Entity& whiteRect(manager.addEntity());
 int mX, mY;
 bool placedL[2][10][10];
 bool placedR[2][10][10];
+double rotation;
+Text text;
 
 void GameMaster::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
@@ -31,6 +35,11 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
 
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0){
         PLOGE << "Failed initializing subsystems!\n";
+        isRunning = false;
+        return;
+    }
+    if(TTF_Init() < 0){
+        PLOGE << "failed initializing TTF! " << TTF_GetError();
         isRunning = false;
         return;
     }
@@ -56,6 +65,7 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     }
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     isRunning = true;
+
     PLOGI << "Renderer initialized successfully.";
     PLOGI << "Initializing renderer...";
 
@@ -86,12 +96,24 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     whiteRect.addComponent<SpriteComponent>("../res/textures/whitesq.png");
     whiteRect.getComponent<SpriteComponent>().setTransparent();
     whiteRect.getComponent<SpriteComponent>().setAlpha(100);
+    whiteRect.addGroup(groupMarkings);
+    Text text1("../res/fonts/Unibody_8_Bold.ttf", 40, "Test message", {255, 255, 255, 255});
+    text = text1;
 }
 
 void GameMaster::handleEvents() {
     int x, y;
     SDL_PollEvent(&event);
     switch(event.type){
+        case SDL_KEYDOWN:
+            if(event.key.keysym.sym == SDLK_r){
+                if(rotation >= 360)
+                    rotation = 0;
+                rotation+=90;
+                PLOGI << rotation;
+                break;
+            }
+            break;
         case SDL_QUIT:
             isRunning = false;
             break;
@@ -112,7 +134,11 @@ void GameMaster::handleEvents() {
             else {
                 Entity& obj(manager.addEntity());
                 obj.addComponent<TransformComponent>((float)x, (float)y);
-                obj.addComponent<SpriteComponent>("../res/textures/whitesq.png");
+                obj.addComponent<SpriteComponent>(("../res/textures/tiles/" + std::to_string(TEX::shipmid) + ".png").c_str());
+                obj.getComponent<SpriteComponent>().setTransparent();
+                obj.getComponent<SpriteComponent>().setAlpha(255);
+                obj.getComponent<SpriteComponent>().rotate(rotation);
+                obj.addGroup(groupShips);
                 if(x < 704){
                     placedL[0][(x/64)-1][(y/64)-1] = true;
                 }
@@ -136,14 +162,31 @@ void GameMaster::update() {
         whiteRect.getComponent<SpriteComponent>().setAlpha(0);
     manager.refresh();
     manager.update();
-//    PLOGI << "(" << whiteRect.getComponent<TransformComponent>().x() << ", " << whiteRect.getComponent<TransformComponent>().y() << ")";
 }
+
+auto& tiles(manager.getGroup(groupLabels::groupMap));
+auto& grid(manager.getGroup(groupLabels::groupGrid));
+auto& ships(manager.getGroup(groupLabels::groupShips));
+auto& markings(manager.getGroup(groupLabels::groupMarkings));
+
 
 void GameMaster::render() {
     SDL_RenderClear(renderer);
     map->DrawMap();
     gridMap->DrawMap();
-    manager.draw();
+    for (auto& t : tiles){
+        t->draw();
+    }
+    for (auto& g : grid){
+        g->draw();
+    }
+    for (auto& s : ships){
+        s->draw();
+    }
+    for (auto& m : markings){
+        m->draw();
+    }
+    text.display(50, 50);
     SDL_RenderPresent(renderer);
 }
 
@@ -157,4 +200,5 @@ void GameMaster::clean() {
 void GameMaster::AddTile(int id, int x, int y) {
     auto& tile(manager.addEntity());
     tile.addComponent<TileComponent>(x, y, 64, 64, id);
+    tile.addGroup(groupMap);
 }

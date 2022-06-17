@@ -40,7 +40,12 @@ public:
     }
 
     void draw() override {
+        if(rotated){
+            TextureManager::Draw(texture, srcRect, destRect, rotation);
+            return;
+        }
         TextureManager::Draw(texture, srcRect, destRect);
+
     }
 
     void setTexture(const char* path){
@@ -58,6 +63,15 @@ public:
         transparent = false;
     }
 
+    void rotate(double _angle){
+        if(rotation == _angle){
+            rotated = false;
+            return;
+        }
+        rotation = _angle;
+        rotated = true;
+    }
+
     ~SpriteComponent() override { SDL_DestroyTexture(texture); }
 
 private:
@@ -65,6 +79,8 @@ private:
     SDL_Texture *texture{};
     SDL_Rect srcRect{}, destRect{};
 
+    bool rotated = false;
+    double rotation{};
     bool transparent{};
     int alpha{};
 };

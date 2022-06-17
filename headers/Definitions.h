@@ -11,9 +11,27 @@
 #define FPS 60
 #define FRAME_DELAY (1000/FPS)
 
+// Groups
+
+enum groupLabels : std::size_t {
+    groupMap,
+    groupGrid,
+    groupShips,
+    groupMarkings
+};
+
+enum GameState {
+    DEBUG = -1,
+    PLACING = 1,
+    SHOOTING = 2,
+    WAITING = 3
+};
+
 // Tilemap definitions
 
 enum TEX {
+    def = -1,
+    // map
     water = 0,
     gridtl = 1,
     gridt = 2,
@@ -32,7 +50,11 @@ enum TEX {
     sandmr = 15,
     sandbl = 16,
     sandb = 17,
-    sandbr = 18
+    sandbr = 18,
+    // ships
+    ship1x1 = 50,
+    shipend = 51,
+    shipmid = 52
 };
 
 static int DEF_BG[15][25]{
