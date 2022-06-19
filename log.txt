@@ -1,167 +1,803 @@
-﻿2022-06-19 23:00:27.747 INFO  [13364] [GameMaster::init@40] Initializing game subsystems...
-2022-06-19 23:00:28.270 INFO  [13364] [GameMaster::init@53] Game subsystems initialized successfully.
-2022-06-19 23:00:28.270 INFO  [13364] [GameMaster::init@54] Initializing window...
-2022-06-19 23:00:28.291 INFO  [13364] [GameMaster::init@63] Window initialized successfully.
-2022-06-19 23:00:28.291 INFO  [13364] [GameMaster::init@64] Initializing renderer...
-2022-06-19 23:00:28.408 INFO  [13364] [GameMaster::init@75] Renderer initialized successfully.
-2022-06-19 23:00:28.408 INFO  [13364] [GameMaster::init@76] Initializing renderer...
-2022-06-19 23:00:28.408 INFO  [13364] [GameMaster::init@78] Loading map texture...
-2022-06-19 23:00:28.418 ERROR [13364] [PlayerBoard::canPlace@93] [ERROR] Can't place the ship on coordinates (2;8) with rotation 2.
- Reason: SHIP LANDS OUTSIDE BOARD
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@133] Trying to place ship of type Carrier on field (2,8) with rotation 2
-2022-06-19 23:00:28.418 ERROR [13364] [PlayerBoard::canPlace@81] [ERROR] Can't place the ship on coordinates (7;4) with rotation 0.
- Reason: SHIP LANDS OUTSIDE BOARD
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@133] Trying to place ship of type Carrier on field (7,4) with rotation 0
-2022-06-19 23:00:28.418 ERROR [13364] [PlayerBoard::canPlace@81] [ERROR] Can't place the ship on coordinates (8;4) with rotation 0.
- Reason: SHIP LANDS OUTSIDE BOARD
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@133] Trying to place ship of type Carrier on field (8,4) with rotation 0
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@145] Going recursive...
-2022-06-19 23:00:28.418 ERROR [13364] [PlayerBoard::canPlace@98] [ERROR] Can't place the ship on coordinates (3;3) with rotation 1.
+﻿2022-06-19 23:43:23.284 INFO  [9864] [GameMaster::init@42] Initializing game subsystems...
+2022-06-19 23:43:23.812 INFO  [9864] [GameMaster::init@55] Game subsystems initialized successfully.
+2022-06-19 23:43:23.812 INFO  [9864] [GameMaster::init@56] Initializing window...
+2022-06-19 23:43:23.834 INFO  [9864] [GameMaster::init@65] Window initialized successfully.
+2022-06-19 23:43:23.834 INFO  [9864] [GameMaster::init@66] Initializing renderer...
+2022-06-19 23:43:23.948 INFO  [9864] [GameMaster::init@77] Renderer initialized successfully.
+2022-06-19 23:43:23.948 INFO  [9864] [GameMaster::init@78] Initializing renderer...
+2022-06-19 23:43:23.948 INFO  [9864] [GameMaster::init@80] Loading map texture...
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@145] Going recursive...
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@145] Going recursive...
+2022-06-19 23:43:23.959 ERROR [9864] [PlayerBoard::canPlace@98] [ERROR] Can't place the ship on coordinates (3;0) with rotation 8.
  Reason: ONE OF THE FIELDS IS OCCUPIED.
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@133] Trying to place ship of type Battleship on field (3,3) with rotation 1
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@145] Going recursive...
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@145] Going recursive...
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@145] Going recursive...
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@145] Going recursive...
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@145] Going recursive...
-2022-06-19 23:00:28.418 ERROR [13364] [PlayerBoard::canPlace@98] [ERROR] Can't place the ship on coordinates (1;0) with rotation 4.
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@133] Trying to place ship of type Cruiser on field (3,0) with rotation 8
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@145] Going recursive...
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@145] Going recursive...
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@145] Going recursive...
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@145] Going recursive...
+2022-06-19 23:43:23.959 ERROR [9864] [PlayerBoard::canPlace@98] [ERROR] Can't place the ship on coordinates (2;5) with rotation 9.
  Reason: ONE OF THE FIELDS IS OCCUPIED.
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@133] Trying to place ship of type Submarine on field (1,0) with rotation 4
-2022-06-19 23:00:28.418 DEBUG [13364] [PlayerBoard::autoPlace@141] Returning board...
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185]           
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185] +         
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185] +      +  
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185] +  +++++  
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185] +         
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185]        ++ 
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185]           
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185]   +       
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185]      +++  
-2022-06-19 23:00:28.418 INFO  [13364] [PlayerBoard::PrintBoardToLog@185]       ++  
-2022-06-19 23:00:33.669 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 9) empty, missed.
-2022-06-19 23:00:33.669 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 9) empty, missed.
-2022-06-19 23:00:33.890 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 7) empty, missed.
-2022-06-19 23:00:34.309 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 0) empty, missed.
-2022-06-19 23:00:34.309 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 0) empty, missed.
-2022-06-19 23:00:34.598 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 4) occupied
-2022-06-19 23:00:35.287 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 1) occupied
-2022-06-19 23:00:35.287 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 1) occupied
-2022-06-19 23:00:35.479 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 4) empty, missed.
-2022-06-19 23:00:36.006 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 6) empty, missed.
-2022-06-19 23:00:36.006 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 6) empty, missed.
-2022-06-19 23:00:36.271 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 4) empty, missed.
-2022-06-19 23:00:36.592 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 9) empty, missed.
-2022-06-19 23:00:36.592 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 9) empty, missed.
-2022-06-19 23:00:36.753 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 5) occupied
-2022-06-19 23:00:37.069 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 4) empty, missed.
-2022-06-19 23:00:37.069 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 4) empty, missed.
-2022-06-19 23:00:37.220 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 3) occupied
-2022-06-19 23:00:37.543 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 6) occupied
-2022-06-19 23:00:37.543 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 6) occupied
-2022-06-19 23:00:37.817 INFO  [13364] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
-2022-06-19 23:00:38.064 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 6) occupied
-2022-06-19 23:00:38.442 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 4) empty, missed.
-2022-06-19 23:00:38.442 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 4) empty, missed.
-2022-06-19 23:00:38.668 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 1) empty, missed.
-2022-06-19 23:00:38.942 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 5) empty, missed.
-2022-06-19 23:00:38.942 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 5) empty, missed.
-2022-06-19 23:00:39.128 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 2) empty, missed.
-2022-06-19 23:00:39.548 INFO  [13364] [PlayerBoard::shootField@53] field ( 8, 1) empty, missed.
-2022-06-19 23:00:39.548 INFO  [13364] [PlayerBoard::shootField@53] field ( 8, 1) empty, missed.
-2022-06-19 23:00:39.795 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 7) occupied
-2022-06-19 23:00:40.454 INFO  [13364] [PlayerBoard::shootField@53] field ( 8, 7) empty, missed.
-2022-06-19 23:00:40.454 INFO  [13364] [PlayerBoard::shootField@53] field ( 8, 7) empty, missed.
-2022-06-19 23:00:40.679 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 8) empty, missed.
-2022-06-19 23:00:41.317 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 8) empty, missed.
-2022-06-19 23:00:41.317 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 8) empty, missed.
-2022-06-19 23:00:41.485 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 5) empty, missed.
-2022-06-19 23:00:41.696 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 5) occupied
-2022-06-19 23:00:41.696 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 5) occupied
-2022-06-19 23:00:41.858 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 6) empty, missed.
-2022-06-19 23:00:42.051 INFO  [13364] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
-2022-06-19 23:00:42.051 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 9) empty, missed.
-2022-06-19 23:00:42.051 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 9) empty, missed.
-2022-06-19 23:00:42.229 INFO  [13364] [PlayerBoard::shootField@49] field ( 2, 7) occupied
-2022-06-19 23:00:42.564 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 3) occupied
-2022-06-19 23:00:42.564 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 3) occupied
-2022-06-19 23:00:42.790 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 5) empty, missed.
-2022-06-19 23:00:42.934 INFO  [13364] [PlayerBoard::shootField@53] field ( 8, 3) empty, missed.
-2022-06-19 23:00:42.934 INFO  [13364] [PlayerBoard::shootField@53] field ( 8, 3) empty, missed.
-2022-06-19 23:00:43.110 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 6) empty, missed.
-2022-06-19 23:00:43.337 INFO  [13364] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
-2022-06-19 23:00:43.337 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 0) empty, missed.
-2022-06-19 23:00:43.337 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 0) empty, missed.
-2022-06-19 23:00:43.508 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 7) empty, missed.
-2022-06-19 23:00:43.705 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 4) occupied
-2022-06-19 23:00:43.705 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 4) occupied
-2022-06-19 23:00:43.932 INFO  [13364] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
-2022-06-19 23:00:44.252 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 8) empty, missed.
-2022-06-19 23:00:44.548 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 1) empty, missed.
-2022-06-19 23:00:44.548 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 1) empty, missed.
-2022-06-19 23:00:44.784 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 9) empty, missed.
-2022-06-19 23:00:44.994 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 6) occupied
-2022-06-19 23:00:44.994 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 6) occupied
-2022-06-19 23:00:45.155 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 8) empty, missed.
-2022-06-19 23:00:45.363 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 5) empty, missed.
-2022-06-19 23:00:45.363 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 5) empty, missed.
-2022-06-19 23:00:45.574 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 8) empty, missed.
-2022-06-19 23:00:45.709 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 7) empty, missed.
-2022-06-19 23:00:45.709 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 7) empty, missed.
-2022-06-19 23:00:45.940 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 9) empty, missed.
-2022-06-19 23:00:46.054 INFO  [13364] [PlayerBoard::shootField@57] field ( 4, 4) unavailable
-2022-06-19 23:00:46.054 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 8) empty, missed.
-2022-06-19 23:00:46.054 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 8) empty, missed.
-2022-06-19 23:00:46.247 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 9) empty, missed.
-2022-06-19 23:00:46.393 INFO  [13364] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
-2022-06-19 23:00:46.393 INFO  [13364] [PlayerBoard::shootField@53] field ( 7, 3) empty, missed.
-2022-06-19 23:00:46.393 INFO  [13364] [PlayerBoard::shootField@53] field ( 7, 3) empty, missed.
-2022-06-19 23:00:46.571 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 9) empty, missed.
-2022-06-19 23:00:49.963 INFO  [13364] [PlayerBoard::shootField@49] field ( 4, 7) occupied
-2022-06-19 23:00:49.963 INFO  [13364] [PlayerBoard::shootField@49] field ( 4, 7) occupied
-2022-06-19 23:00:50.174 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 0) occupied
-2022-06-19 23:00:50.462 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 9) empty, missed.
-2022-06-19 23:00:50.462 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 9) empty, missed.
-2022-06-19 23:00:50.593 INFO  [13364] [PlayerBoard::shootField@49] field ( 2, 0) occupied
-2022-06-19 23:00:50.879 INFO  [13364] [PlayerBoard::shootField@57] field ( 1, 6) unavailable
-2022-06-19 23:00:50.879 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 7) empty, missed.
-2022-06-19 23:00:50.879 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 7) empty, missed.
-2022-06-19 23:00:50.978 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 0) occupied
-2022-06-19 23:00:51.238 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 1) empty, missed.
-2022-06-19 23:00:51.238 INFO  [13364] [PlayerBoard::shootField@53] field ( 2, 1) empty, missed.
-2022-06-19 23:00:51.431 INFO  [13364] [PlayerBoard::shootField@49] field ( 4, 0) occupied
-2022-06-19 23:00:54.205 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 0) empty, missed.
-2022-06-19 23:00:54.205 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 0) empty, missed.
-2022-06-19 23:00:54.592 INFO  [13364] [PlayerBoard::shootField@49] field ( 5, 8) occupied
-2022-06-19 23:00:54.755 INFO  [13364] [PlayerBoard::shootField@57] field ( 3, 4) unavailable
-2022-06-19 23:00:54.755 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 7) occupied
-2022-06-19 23:00:54.755 INFO  [13364] [PlayerBoard::shootField@49] field ( 3, 7) occupied
-2022-06-19 23:00:54.995 INFO  [13364] [PlayerBoard::shootField@53] field ( 5, 9) empty, missed.
-2022-06-19 23:00:55.851 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 2) empty, missed.
-2022-06-19 23:00:55.851 INFO  [13364] [PlayerBoard::shootField@53] field ( 0, 2) empty, missed.
-2022-06-19 23:00:56.076 INFO  [13364] [PlayerBoard::shootField@49] field ( 5, 7) occupied
-2022-06-19 23:00:59.063 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 2) empty, missed.
-2022-06-19 23:00:59.063 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 2) empty, missed.
-2022-06-19 23:00:59.278 INFO  [13364] [PlayerBoard::shootField@49] field ( 8, 7) occupied
-2022-06-19 23:00:59.584 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 0) empty, missed.
-2022-06-19 23:00:59.584 INFO  [13364] [PlayerBoard::shootField@53] field ( 6, 0) empty, missed.
-2022-06-19 23:00:59.794 INFO  [13364] [PlayerBoard::shootField@49] field ( 8, 6) occupied
-2022-06-19 23:00:59.955 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 9) empty, missed.
-2022-06-19 23:00:59.955 INFO  [13364] [PlayerBoard::shootField@53] field ( 3, 9) empty, missed.
-2022-06-19 23:01:00.204 INFO  [13364] [PlayerBoard::shootField@49] field ( 8, 5) occupied
-2022-06-19 23:01:01.352 INFO  [13364] [PlayerBoard::shootField@57] field ( 9, 5) unavailable
-2022-06-19 23:01:01.352 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 2) empty, missed.
-2022-06-19 23:01:01.352 INFO  [13364] [PlayerBoard::shootField@53] field ( 9, 2) empty, missed.
-2022-06-19 23:01:01.572 INFO  [13364] [PlayerBoard::shootField@49] field ( 9, 6) occupied
-2022-06-19 23:01:01.802 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 7) occupied
-2022-06-19 23:01:01.802 INFO  [13364] [PlayerBoard::shootField@49] field ( 1, 7) occupied
-2022-06-19 23:01:01.979 INFO  [13364] [PlayerBoard::shootField@49] field ( 9, 7) occupied
-2022-06-19 23:01:03.399 INFO  [13364] [PlayerBoard::shootField@53] field ( 7, 9) empty, missed.
-2022-06-19 23:01:03.399 INFO  [13364] [PlayerBoard::shootField@53] field ( 7, 9) empty, missed.
-2022-06-19 23:01:03.712 INFO  [13364] [PlayerBoard::shootField@53] field ( 7, 4) empty, missed.
-2022-06-19 23:01:04.008 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 0) empty, missed.
-2022-06-19 23:01:04.008 INFO  [13364] [PlayerBoard::shootField@53] field ( 4, 0) empty, missed.
-2022-06-19 23:01:04.208 INFO  [13364] [PlayerBoard::shootField@53] field ( 7, 3) empty, missed.
-2022-06-19 23:01:04.547 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 8) empty, missed.
-2022-06-19 23:01:04.547 INFO  [13364] [PlayerBoard::shootField@53] field ( 1, 8) empty, missed.
-2022-06-19 23:01:04.830 INFO  [13364] [PlayerBoard::shootField@49] field ( 7, 2) occupied
-2022-06-19 23:01:09.365 INFO  [13364] [GameMaster::clean@343] Cleaned subsystems.
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@133] Trying to place ship of type Submarine on field (2,5) with rotation 9
+2022-06-19 23:43:23.959 DEBUG [9864] [PlayerBoard::autoPlace@141] Returning board...
+2022-06-19 23:43:34.734 INFO  [9864] [GameMaster::handleEvents@184] 1
+2022-06-19 23:43:38.667 INFO  [9864] [GameMaster::handleEvents@184] 0
+2022-06-19 23:43:42.174 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 5) empty, missed.
+2022-06-19 23:43:42.174 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 5) empty, missed.
+2022-06-19 23:43:42.446 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 0) empty, missed.
+2022-06-19 23:43:42.828 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 5) empty, missed.
+2022-06-19 23:43:42.828 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 5) empty, missed.
+2022-06-19 23:43:43.146 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 3) empty, missed.
+2022-06-19 23:43:43.948 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 6) empty, missed.
+2022-06-19 23:43:43.948 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 6) empty, missed.
+2022-06-19 23:43:44.415 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 9) empty, missed.
+2022-06-19 23:43:44.781 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 3) empty, missed.
+2022-06-19 23:43:44.781 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 3) empty, missed.
+2022-06-19 23:43:44.983 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 7) empty, missed.
+2022-06-19 23:43:45.290 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 9) empty, missed.
+2022-06-19 23:43:45.290 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 9) empty, missed.
+2022-06-19 23:43:45.451 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 8) empty, missed.
+2022-06-19 23:43:45.739 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 2) empty, missed.
+2022-06-19 23:43:45.739 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 2) empty, missed.
+2022-06-19 23:43:45.943 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 5) empty, missed.
+2022-06-19 23:43:46.126 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 6) occupied
+2022-06-19 23:43:46.126 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 6) occupied
+2022-06-19 23:43:46.334 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 5) occupied
+2022-06-19 23:43:46.834 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 4) empty, missed.
+2022-06-19 23:43:46.834 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 4) empty, missed.
+2022-06-19 23:43:47.058 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 6) empty, missed.
+2022-06-19 23:43:47.330 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 2) unavailable
+2022-06-19 23:43:47.330 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 3) empty, missed.
+2022-06-19 23:43:47.330 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 3) empty, missed.
+2022-06-19 23:43:47.566 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 4) occupied
+2022-06-19 23:43:47.790 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 6) occupied
+2022-06-19 23:43:47.790 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 6) occupied
+2022-06-19 23:43:47.977 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:43:48.374 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 6) occupied
+2022-06-19 23:43:48.665 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 8) empty, missed.
+2022-06-19 23:43:48.665 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 8) empty, missed.
+2022-06-19 23:43:48.858 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 3) occupied
+2022-06-19 23:43:49.193 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 4) occupied
+2022-06-19 23:43:49.193 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 4) occupied
+2022-06-19 23:43:49.485 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 8) empty, missed.
+2022-06-19 23:43:49.743 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 2) empty, missed.
+2022-06-19 23:43:49.743 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 2) empty, missed.
+2022-06-19 23:43:49.967 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 7) empty, missed.
+2022-06-19 23:43:50.358 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 6) empty, missed.
+2022-06-19 23:43:50.358 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 6) empty, missed.
+2022-06-19 23:43:50.626 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 2) occupied
+2022-06-19 23:43:50.999 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 1) empty, missed.
+2022-06-19 23:43:50.999 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 1) empty, missed.
+2022-06-19 23:43:51.225 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 4) empty, missed.
+2022-06-19 23:43:51.455 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 7) empty, missed.
+2022-06-19 23:43:51.455 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 7) empty, missed.
+2022-06-19 23:43:51.672 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 1) empty, missed.
+2022-06-19 23:43:51.932 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:43:51.932 INFO  [9864] [PlayerBoard::shootField@49] field ( 5, 2) occupied
+2022-06-19 23:43:51.932 INFO  [9864] [PlayerBoard::shootField@49] field ( 5, 2) occupied
+2022-06-19 23:43:52.140 INFO  [9864] [PlayerBoard::shootField@49] field ( 4, 1) occupied
+2022-06-19 23:43:52.356 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 9) empty, missed.
+2022-06-19 23:43:52.356 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 9) empty, missed.
+2022-06-19 23:43:52.722 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 3) empty, missed.
+2022-06-19 23:43:52.986 INFO  [9864] [PlayerBoard::shootField@49] field ( 5, 3) occupied
+2022-06-19 23:43:52.986 INFO  [9864] [PlayerBoard::shootField@49] field ( 5, 3) occupied
+2022-06-19 23:43:53.291 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 2) empty, missed.
+2022-06-19 23:43:53.589 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 1) empty, missed.
+2022-06-19 23:43:53.589 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 1) empty, missed.
+2022-06-19 23:43:53.835 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 0) empty, missed.
+2022-06-19 23:43:54.037 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 1) empty, missed.
+2022-06-19 23:43:54.037 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 1) empty, missed.
+2022-06-19 23:43:54.246 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 1) unavailable
+2022-06-19 23:43:54.673 INFO  [9864] [PlayerBoard::shootField@49] field ( 4, 2) occupied
+2022-06-19 23:43:54.982 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 6) unavailable
+2022-06-19 23:43:54.982 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 0) empty, missed.
+2022-06-19 23:43:54.982 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 0) empty, missed.
+2022-06-19 23:43:55.239 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 1) empty, missed.
+2022-06-19 23:43:55.560 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:43:55.560 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 3) occupied
+2022-06-19 23:43:55.560 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 3) occupied
+2022-06-19 23:43:55.713 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 3) empty, missed.
+2022-06-19 23:43:55.913 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 7) empty, missed.
+2022-06-19 23:43:55.913 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 7) empty, missed.
+2022-06-19 23:43:56.091 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 4) empty, missed.
+2022-06-19 23:43:56.334 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 8) empty, missed.
+2022-06-19 23:43:56.334 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 8) empty, missed.
+2022-06-19 23:43:56.494 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 4) empty, missed.
+2022-06-19 23:43:56.772 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 5) unavailable
+2022-06-19 23:43:56.772 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 5) empty, missed.
+2022-06-19 23:43:56.772 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 5) empty, missed.
+2022-06-19 23:43:56.941 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 5) empty, missed.
+2022-06-19 23:43:57.200 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 9) empty, missed.
+2022-06-19 23:43:57.200 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 9) empty, missed.
+2022-06-19 23:43:57.377 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 6) empty, missed.
+2022-06-19 23:43:57.541 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:43:57.541 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 1) empty, missed.
+2022-06-19 23:43:57.541 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 1) empty, missed.
+2022-06-19 23:43:57.726 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 6) unavailable
+2022-06-19 23:43:57.991 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 6) unavailable
+2022-06-19 23:43:58.313 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 7) empty, missed.
+2022-06-19 23:43:58.489 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 8) empty, missed.
+2022-06-19 23:43:58.489 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 8) empty, missed.
+2022-06-19 23:43:58.714 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 7) empty, missed.
+2022-06-19 23:43:58.893 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:43:58.893 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:43:58.893 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:43:58.893 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 6) empty, missed.
+2022-06-19 23:43:58.893 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 6) empty, missed.
+2022-06-19 23:43:59.101 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 8) empty, missed.
+2022-06-19 23:43:59.295 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 1) empty, missed.
+2022-06-19 23:43:59.295 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 1) empty, missed.
+2022-06-19 23:43:59.457 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 9) empty, missed.
+2022-06-19 23:43:59.637 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 2) empty, missed.
+2022-06-19 23:43:59.637 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 2) empty, missed.
+2022-06-19 23:43:59.805 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 9) empty, missed.
+2022-06-19 23:43:59.966 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 5) occupied
+2022-06-19 23:43:59.966 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 5) occupied
+2022-06-19 23:44:00.162 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 9) empty, missed.
+2022-06-19 23:44:00.226 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 6) empty, missed.
+2022-06-19 23:44:00.226 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 6) empty, missed.
+2022-06-19 23:44:00.467 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 9) empty, missed.
+2022-06-19 23:44:00.565 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 6) empty, missed.
+2022-06-19 23:44:00.565 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 6) empty, missed.
+2022-06-19 23:44:00.779 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 8) empty, missed.
+2022-06-19 23:44:00.878 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:44:00.878 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 4) empty, missed.
+2022-06-19 23:44:00.878 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 4) empty, missed.
+2022-06-19 23:44:01.043 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 8) empty, missed.
+2022-06-19 23:44:01.236 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 7) empty, missed.
+2022-06-19 23:44:01.236 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 7) empty, missed.
+2022-06-19 23:44:01.396 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 9) empty, missed.
+2022-06-19 23:44:01.574 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 5) occupied
+2022-06-19 23:44:01.574 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 5) occupied
+2022-06-19 23:44:01.766 INFO  [9864] [PlayerBoard::shootField@49] field ( 0, 8) occupied
+2022-06-19 23:44:01.902 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 1) unavailable
+2022-06-19 23:44:01.902 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 9) empty, missed.
+2022-06-19 23:44:01.902 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 9) empty, missed.
+2022-06-19 23:44:02.131 INFO  [9864] [PlayerBoard::shootField@49] field ( 0, 7) occupied
+2022-06-19 23:44:02.341 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 2) empty, missed.
+2022-06-19 23:44:02.341 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 2) empty, missed.
+2022-06-19 23:44:02.471 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 7) empty, missed.
+2022-06-19 23:44:02.701 INFO  [9864] [PlayerBoard::shootField@49] field ( 5, 1) occupied
+2022-06-19 23:44:02.701 INFO  [9864] [PlayerBoard::shootField@49] field ( 5, 1) occupied
+2022-06-19 23:44:02.814 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 6) empty, missed.
+2022-06-19 23:44:03.039 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 5) empty, missed.
+2022-06-19 23:44:03.039 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 5) empty, missed.
+2022-06-19 23:44:03.187 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 6) occupied
+2022-06-19 23:44:03.337 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:03.337 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:44:03.337 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:03.337 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 8) empty, missed.
+2022-06-19 23:44:03.337 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 8) empty, missed.
+2022-06-19 23:44:03.530 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 5) occupied
+2022-06-19 23:44:03.742 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 0) empty, missed.
+2022-06-19 23:44:03.742 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 0) empty, missed.
+2022-06-19 23:44:03.887 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 5) empty, missed.
+2022-06-19 23:44:04.130 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 2) unavailable
+2022-06-19 23:44:04.130 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 7) empty, missed.
+2022-06-19 23:44:04.130 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 7) empty, missed.
+2022-06-19 23:44:04.341 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 4) empty, missed.
+2022-06-19 23:44:04.487 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 0) unavailable
+2022-06-19 23:44:04.487 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:04.487 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 7) empty, missed.
+2022-06-19 23:44:04.487 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 7) empty, missed.
+2022-06-19 23:44:04.697 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 3) empty, missed.
+2022-06-19 23:44:04.858 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 2) empty, missed.
+2022-06-19 23:44:04.858 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 2) empty, missed.
+2022-06-19 23:44:05.052 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 2) empty, missed.
+2022-06-19 23:44:05.231 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 5) unavailable
+2022-06-19 23:44:05.231 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 9) empty, missed.
+2022-06-19 23:44:05.231 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 9) empty, missed.
+2022-06-19 23:44:05.418 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 1) empty, missed.
+2022-06-19 23:44:05.570 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:05.570 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 6) unavailable
+2022-06-19 23:44:05.570 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 2) empty, missed.
+2022-06-19 23:44:05.570 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 2) empty, missed.
+2022-06-19 23:44:05.740 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 1) unavailable
+2022-06-19 23:44:06.085 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 0) empty, missed.
+2022-06-19 23:44:06.599 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 3) empty, missed.
+2022-06-19 23:44:06.599 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 3) empty, missed.
+2022-06-19 23:44:06.828 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 2) empty, missed.
+2022-06-19 23:44:07.024 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 4) empty, missed.
+2022-06-19 23:44:07.024 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 4) empty, missed.
+2022-06-19 23:44:07.241 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 0) occupied
+2022-06-19 23:44:07.534 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 5) empty, missed.
+2022-06-19 23:44:07.534 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 5) empty, missed.
+2022-06-19 23:44:07.747 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 0) empty, missed.
+2022-06-19 23:44:07.971 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:07.971 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 7) empty, missed.
+2022-06-19 23:44:07.971 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 7) empty, missed.
+2022-06-19 23:44:08.203 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 1) empty, missed.
+2022-06-19 23:44:08.351 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 4) empty, missed.
+2022-06-19 23:44:08.351 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 4) empty, missed.
+2022-06-19 23:44:08.545 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 1) empty, missed.
+2022-06-19 23:44:08.731 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 9) empty, missed.
+2022-06-19 23:44:08.731 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 9) empty, missed.
+2022-06-19 23:44:08.909 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 2) empty, missed.
+2022-06-19 23:44:09.056 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 2) unavailable
+2022-06-19 23:44:09.056 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 8) empty, missed.
+2022-06-19 23:44:09.056 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 8) empty, missed.
+2022-06-19 23:44:09.301 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 3) empty, missed.
+2022-06-19 23:44:09.400 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 6) empty, missed.
+2022-06-19 23:44:09.400 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 6) empty, missed.
+2022-06-19 23:44:09.611 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 4) empty, missed.
+2022-06-19 23:44:09.742 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 2) unavailable
+2022-06-19 23:44:09.742 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:09.742 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:09.742 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 5) occupied
+2022-06-19 23:44:09.742 INFO  [9864] [PlayerBoard::shootField@49] field ( 3, 5) occupied
+2022-06-19 23:44:09.988 INFO  [9864] [PlayerBoard::shootField@49] field ( 0, 5) occupied
+2022-06-19 23:44:10.155 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 2) empty, missed.
+2022-06-19 23:44:10.155 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 2) empty, missed.
+2022-06-19 23:44:10.351 INFO  [9864] [PlayerBoard::shootField@49] field ( 0, 6) occupied
+2022-06-19 23:44:11.128 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 0) empty, missed.
+2022-06-19 23:44:11.128 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 0) empty, missed.
+2022-06-19 23:44:11.340 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 9) empty, missed.
+2022-06-19 23:44:11.508 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:44:11.508 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:11.508 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 9) unavailable
+2022-06-19 23:44:11.508 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 6) unavailable
+2022-06-19 23:44:11.508 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 4) empty, missed.
+2022-06-19 23:44:11.508 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 4) empty, missed.
+2022-06-19 23:44:11.718 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 8) empty, missed.
+2022-06-19 23:44:11.852 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:11.852 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:11.852 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 0) empty, missed.
+2022-06-19 23:44:11.852 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 0) empty, missed.
+2022-06-19 23:44:12.030 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 7) empty, missed.
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 6) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 5) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 1) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 1) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 2) unavailable
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 3) empty, missed.
+2022-06-19 23:44:12.242 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 3) empty, missed.
+2022-06-19 23:44:12.409 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 6) empty, missed.
+2022-06-19 23:44:12.623 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:12.623 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 2) unavailable
+2022-06-19 23:44:12.623 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:12.623 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 3) unavailable
+2022-06-19 23:44:12.623 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 9) empty, missed.
+2022-06-19 23:44:12.623 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 9) empty, missed.
+2022-06-19 23:44:12.801 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 5) empty, missed.
+2022-06-19 23:44:13.035 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 9) empty, missed.
+2022-06-19 23:44:13.035 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 9) empty, missed.
+2022-06-19 23:44:13.231 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 4) empty, missed.
+2022-06-19 23:44:13.382 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 9) unavailable
+2022-06-19 23:44:13.382 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:13.382 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:13.382 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 0) empty, missed.
+2022-06-19 23:44:13.382 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 0) empty, missed.
+2022-06-19 23:44:13.662 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 3) empty, missed.
+2022-06-19 23:44:13.779 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 9) empty, missed.
+2022-06-19 23:44:13.779 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 9) empty, missed.
+2022-06-19 23:44:14.057 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 2) empty, missed.
+2022-06-19 23:44:14.236 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:14.236 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:14.236 INFO  [9864] [PlayerBoard::shootField@49] field ( 0, 0) occupied
+2022-06-19 23:44:14.236 INFO  [9864] [PlayerBoard::shootField@49] field ( 0, 0) occupied
+2022-06-19 23:44:14.430 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 1) empty, missed.
+2022-06-19 23:44:14.611 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 5) unavailable
+2022-06-19 23:44:14.611 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:14.611 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 5) unavailable
+2022-06-19 23:44:14.611 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 0) empty, missed.
+2022-06-19 23:44:14.611 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 0) empty, missed.
+2022-06-19 23:44:14.810 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 0) empty, missed.
+2022-06-19 23:44:14.945 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 5) occupied
+2022-06-19 23:44:14.945 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 5) occupied
+2022-06-19 23:44:15.154 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 0) empty, missed.
+2022-06-19 23:44:15.779 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 3) unavailable
+2022-06-19 23:44:15.779 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 7) empty, missed.
+2022-06-19 23:44:15.779 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 7) empty, missed.
+2022-06-19 23:44:16.044 INFO  [9864] [PlayerBoard::shootField@49] field ( 7, 0) occupied
+2022-06-19 23:44:16.227 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 6) unavailable
+2022-06-19 23:44:16.227 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:16.227 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 7) unavailable
+2022-06-19 23:44:16.227 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:16.227 INFO  [9864] [PlayerBoard::shootField@49] field ( 1, 8) occupied
+2022-06-19 23:44:16.227 INFO  [9864] [PlayerBoard::shootField@49] field ( 1, 8) occupied
+2022-06-19 23:44:16.456 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 1) empty, missed.
+2022-06-19 23:44:16.552 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 0) empty, missed.
+2022-06-19 23:44:16.552 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 0) empty, missed.
+2022-06-19 23:44:16.884 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 2) empty, missed.
+2022-06-19 23:44:17.017 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 9) unavailable
+2022-06-19 23:44:17.017 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:17.017 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 1) empty, missed.
+2022-06-19 23:44:17.017 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 1) empty, missed.
+2022-06-19 23:44:17.385 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 3) empty, missed.
+2022-06-19 23:44:17.567 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 9) unavailable
+2022-06-19 23:44:17.567 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 6) unavailable
+2022-06-19 23:44:17.567 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 3) empty, missed.
+2022-06-19 23:44:17.567 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 3) empty, missed.
+2022-06-19 23:44:17.915 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 0) empty, missed.
+2022-06-19 23:44:17.979 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:17.979 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:17.979 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:17.979 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 7) empty, missed.
+2022-06-19 23:44:17.979 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 7) empty, missed.
+2022-06-19 23:44:18.444 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 0) empty, missed.
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 2) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 2) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 2) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 5) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 6) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 9) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 2) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 5) empty, missed.
+2022-06-19 23:44:18.558 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 5) empty, missed.
+2022-06-19 23:44:18.832 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 1) empty, missed.
+2022-06-19 23:44:18.986 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 4) empty, missed.
+2022-06-19 23:44:18.986 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 4) empty, missed.
+2022-06-19 23:44:19.300 INFO  [9864] [PlayerBoard::shootField@49] field ( 9, 1) occupied
+2022-06-19 23:44:19.485 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 9) empty, missed.
+2022-06-19 23:44:19.485 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 9) empty, missed.
+2022-06-19 23:44:19.765 INFO  [9864] [PlayerBoard::shootField@49] field ( 9, 2) occupied
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 3) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 6) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 0) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 7) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 6) empty, missed.
+2022-06-19 23:44:20.009 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 6) empty, missed.
+2022-06-19 23:44:20.307 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 2) empty, missed.
+2022-06-19 23:44:20.375 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 6) unavailable
+2022-06-19 23:44:20.375 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 5) unavailable
+2022-06-19 23:44:20.375 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 9) unavailable
+2022-06-19 23:44:20.375 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 8) empty, missed.
+2022-06-19 23:44:20.375 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 8) empty, missed.
+2022-06-19 23:44:20.607 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 3) empty, missed.
+2022-06-19 23:44:20.758 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 9) unavailable
+2022-06-19 23:44:20.758 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 3) unavailable
+2022-06-19 23:44:20.758 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 8) occupied
+2022-06-19 23:44:20.758 INFO  [9864] [PlayerBoard::shootField@49] field ( 2, 8) occupied
+2022-06-19 23:44:20.921 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 5) empty, missed.
+2022-06-19 23:44:21.187 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:21.187 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:21.187 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 2) empty, missed.
+2022-06-19 23:44:21.187 INFO  [9864] [PlayerBoard::shootField@53] field ( 2, 2) empty, missed.
+2022-06-19 23:44:21.369 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 4) empty, missed.
+2022-06-19 23:44:21.534 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 6) unavailable
+2022-06-19 23:44:21.534 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 2) empty, missed.
+2022-06-19 23:44:21.534 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 2) empty, missed.
+2022-06-19 23:44:21.695 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 4) empty, missed.
+2022-06-19 23:44:21.880 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 6) empty, missed.
+2022-06-19 23:44:21.880 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 6) empty, missed.
+2022-06-19 23:44:22.077 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 5) empty, missed.
+2022-06-19 23:44:22.382 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:22.382 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 7) unavailable
+2022-06-19 23:44:22.382 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 3) empty, missed.
+2022-06-19 23:44:22.382 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 3) empty, missed.
+2022-06-19 23:44:22.594 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 6) empty, missed.
+2022-06-19 23:44:22.940 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:22.940 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 2) unavailable
+2022-06-19 23:44:22.940 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:22.940 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:22.940 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 1) empty, missed.
+2022-06-19 23:44:22.940 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 1) empty, missed.
+2022-06-19 23:44:23.118 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 6) empty, missed.
+2022-06-19 23:44:23.283 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 0) unavailable
+2022-06-19 23:44:23.283 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 8) empty, missed.
+2022-06-19 23:44:23.283 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 8) empty, missed.
+2022-06-19 23:44:23.513 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 7) empty, missed.
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 2) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 3) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 1) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 1) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 2) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 5) unavailable
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 0) empty, missed.
+2022-06-19 23:44:23.679 INFO  [9864] [PlayerBoard::shootField@53] field ( 6, 0) empty, missed.
+2022-06-19 23:44:23.892 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 7) empty, missed.
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 7) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 0) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 6) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 8) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 1) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 3) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 4) unavailable
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 3) empty, missed.
+2022-06-19 23:44:24.105 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 3) empty, missed.
+2022-06-19 23:44:24.252 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 8) empty, missed.
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 5) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 1) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 7) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 2) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 6) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 7) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 1) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 5) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 4) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 8) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 1) empty, missed.
+2022-06-19 23:44:24.506 INFO  [9864] [PlayerBoard::shootField@53] field ( 0, 1) empty, missed.
+2022-06-19 23:44:24.671 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 8) empty, missed.
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 1) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 5) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 0) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 9) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 6) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 9) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 9) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 3) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 0) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 9) unavailable
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 3) occupied
+2022-06-19 23:44:24.969 INFO  [9864] [PlayerBoard::shootField@49] field ( 6, 3) occupied
+2022-06-19 23:44:25.148 INFO  [9864] [PlayerBoard::shootField@53] field ( 8, 9) empty, missed.
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 0) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 9) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 7) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 7) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 1) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 8) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 8) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 1) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 5) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 0) empty, missed.
+2022-06-19 23:44:25.327 INFO  [9864] [PlayerBoard::shootField@53] field ( 1, 0) empty, missed.
+2022-06-19 23:44:25.541 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 9) empty, missed.
+2022-06-19 23:44:25.728 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 1) unavailable
+2022-06-19 23:44:25.728 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 3) unavailable
+2022-06-19 23:44:25.728 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 1) empty, missed.
+2022-06-19 23:44:25.728 INFO  [9864] [PlayerBoard::shootField@53] field ( 4, 1) empty, missed.
+2022-06-19 23:44:25.943 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 9) empty, missed.
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 0) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 3) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 0) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 4) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 1) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 9) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 7) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 0) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 6) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 9) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 8) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 4) empty, missed.
+2022-06-19 23:44:26.129 INFO  [9864] [PlayerBoard::shootField@53] field ( 3, 4) empty, missed.
+2022-06-19 23:44:26.310 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 8) empty, missed.
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 2) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 2) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 4) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 2) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 4) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 2) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 2) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 4) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 7) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 8) unavailable
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 7) empty, missed.
+2022-06-19 23:44:26.444 INFO  [9864] [PlayerBoard::shootField@53] field ( 7, 7) empty, missed.
+2022-06-19 23:44:26.776 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 7) empty, missed.
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 4) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 9) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 5) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 2) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 6) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 9) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 6) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 5) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 4) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 3) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 0) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 0) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 4) empty, missed.
+2022-06-19 23:44:26.860 INFO  [9864] [PlayerBoard::shootField@53] field ( 5, 4) empty, missed.
+2022-06-19 23:44:27.242 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 6) empty, missed.
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 0) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 8) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 5) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 9) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 8) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 2) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 2) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 2) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 1) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 4) occupied
+2022-06-19 23:44:27.459 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 4) occupied
+2022-06-19 23:44:27.754 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 5) empty, missed.
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 9) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 7) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 3) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 1) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 8) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 3) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 7) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 7) unavailable
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 7) occupied
+2022-06-19 23:44:28.125 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 7) occupied
+2022-06-19 23:44:28.575 INFO  [9864] [PlayerBoard::shootField@53] field ( 9, 4) empty, missed.
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 3) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 1) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 3) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 9) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 9) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 1) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 6) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 1) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 8) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 5) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 1) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:44:29.102 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 9) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 9) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 5) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 9) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 5) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 5) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 7) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 7) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 8) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 6) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 8) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 6) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 7) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 6) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 6, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 9) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 5) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 7) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 2, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 8) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 9) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 9, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 3, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 5) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 4) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 4, 1) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 1, 0) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 0, 2) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 3) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 7, 8) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 5, 5) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@57] field ( 8, 6) unavailable
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 8) occupied
+2022-06-19 23:44:29.103 INFO  [9864] [PlayerBoard::shootField@49] field ( 8, 8) occupied
+2022-06-19 23:44:33.375 INFO  [9864] [GameMaster::clean@349] Cleaned subsystems.

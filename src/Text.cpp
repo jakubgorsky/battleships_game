@@ -7,7 +7,8 @@
 #include "Text.h"
 #include <plog/Log.h>
 
-Text::Text(const std::string &font_Path, int font_size, const std::string &message, const SDL_Color &color) {
+Text::Text(const std::string &font_Path, int font_size, const std::string &message, const SDL_Color &color)
+    : path(font_Path), font_size(font_size), message(message), color(color){
     textTexture = loadFont(font_Path, font_size, message, color);
     SDL_QueryTexture(textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
 }
@@ -36,4 +37,28 @@ SDL_Texture *Text::loadFont(const std::string &font_path, int font_size, const s
     }
 //    SDL_FreeSurface(text_surface);
     return text_texture;
+}
+
+void Text::setText(const std::string &message) {
+    textTexture = loadFont(path, font_size, message, color);
+    this->message = message;
+    SDL_QueryTexture(textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
+}
+
+void Text::setSize(int font_size) {
+    textTexture = loadFont(path, font_size, message, color);
+    this->font_size = font_size;
+    SDL_QueryTexture(textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
+}
+
+void Text::setFont(const std::string &font_Path) {
+    textTexture = loadFont(path, font_size, message, color);
+    this->path = font_Path;
+    SDL_QueryTexture(textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
+}
+
+void Text::setColor(const SDL_Color &color) {
+    textTexture = loadFont(path, font_size, message, color);
+    this->color = color;
+    SDL_QueryTexture(textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
 }

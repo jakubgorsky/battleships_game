@@ -14,6 +14,10 @@ public:
     Text() = default;
     Text(const std::string &font_Path, int font_size, const std::string &message, const SDL_Color &color);
 
+    void setText(const std::string &message);
+    void setSize(int font_size);
+    void setFont(const std::string &font_Path);
+    void setColor(const SDL_Color &color);
     void display(int x, int y) const;
 
     static SDL_Texture* loadFont(const std::string &font_Path, int font_size, const std::string &message, const SDL_Color &color);
@@ -22,6 +26,9 @@ public:
 
 protected:
 private:
+    std::string path, message;
+    int font_size;
+    SDL_Color color;
     SDL_Texture *textTexture = nullptr;
     mutable SDL_Rect textRect{};
     SDL_Rect *srcRect = nullptr;

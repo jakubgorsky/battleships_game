@@ -22,6 +22,8 @@ Manager manager;
 int mX, mY;
 double rotation;
 Text text;
+Text *titleText, *shiptypehelp, *shootrotate, *skip, *quit, *turn;
+Entity &textBG(manager.addEntity());
 Ships player, ai;
 PlayerBoard *playerBoard = new PlayerBoard(player);
 PlayerBoard *aiBoard = new PlayerBoard(ai);
@@ -88,22 +90,22 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     boardHoverMarker.getComponent<SpriteComponent>().setTransparent();
     boardHoverMarker.addGroup(groupMarkings);
 
-//    for (int i = 0; i < BOARD_SIZE; i++){
-//        for (int j = 0; j < BOARD_SIZE; j++){
-//            aiBoard->setFieldStatus(i, j, AI_DEBUG[i][j]);
-//        }
-//    }
     auto *tempBoard = aiBoard->autoPlace(*aiBoard);
-//    for (int i = 0; i < BOARD_SIZE; i++){
-//        for (int j = 0; j < BOARD_SIZE; j++){
-//            aiBoard->setFieldStatus(i, j, tempBoard->getFieldStatus(i, j));
-//        }
-//    }
+    titleText = new Text("../res/fonts/ubuntu.ttf", 24, "controls:", {255,255,255,255});
+    shiptypehelp = new Text("../res/fonts/ubuntu.ttf", 24, "1-5 selects ship type to place", {255,255,255,255});
+    shootrotate = new Text("../res/fonts/ubuntu.ttf", 24, "LMB to place / shoot, RMB to rotate", {255,255,255,255});
+    skip = new Text("../res/fonts/ubuntu.ttf", 24, "Space to let the AI make a turn", {255,255,255,255});
+    quit = new Text("../res/fonts/ubuntu.ttf", 24, "ESC to quit", {255, 255, 255, 255});
+    turn = new Text("../res/fonts/ubuntu.ttf", 40, "Your turn", {255,255,255,255});
+    textBG.addComponent<TransformComponent>(5, 740, shootrotate->getRect().w+20, shiptypehelp->getRect().h*5+10, 1, 1);
+    textBG.addComponent<SpriteComponent>(TextureManager::LoadTexture("../res/textures/blacksq.png"));
+    textBG.getComponent<SpriteComponent>().setTransparent();
+    textBG.getComponent<SpriteComponent>().setAlpha(150);
+    textBG.addGroup(groupGrid);
     aiBoard = tempBoard;
     if(tempBoard == nullptr){
         PLOGE << "Didn't generate random board";
     }
-
     setGameState(GAMESTATE::PLACING);
 }
 
@@ -163,8 +165,7 @@ void GameMaster::handleEvents() {
                             obj.addGroup(groupMarkings);
                         }
                         setGameState(GAMESTATE::PLAYER_TURN);
-
-
+                        turn->setText("Your turn");
                     }
                     break;
                 default:
@@ -233,7 +234,6 @@ void GameMaster::handleEvents() {
                 FieldStatus statusToChange = aiBoard->shootField((y / 64) - 1, (x / 64) - 1);
                 if (statusToChange != Unavailable && statusToChange != Default) {
                     aiBoard->setFieldStatus((y / 64) - 1, (x / 64) - 1, statusToChange);
-                    setGameState(GAMESTATE::AI_TURN);
                     if(statusToChange == Hit){
                         Entity& obj(manager.addEntity());
                         obj.addComponent<TransformComponent>(x, y);
@@ -250,6 +250,8 @@ void GameMaster::handleEvents() {
                         obj.getComponent<SpriteComponent>().setAlpha(255);
                         obj.addGroup(groupMarkings);
                     }
+                    setGameState(GAMESTATE::AI_TURN);
+                    turn->setText("AI turn");
                 }
             }
             break;
@@ -281,12 +283,12 @@ void GameMaster::handleEvents() {
 void GameMaster::update() {
     if(!aiBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING){
         setGameState(GAMESTATE::WON);
-        Text textWon("../res/fonts/Unibody_8_Bold.ttf", 80, "You won!", {0, 255, 0, 255});
+        Text textWon("../res/fonts/ubuntu.ttf", 80, "You won!", {0, 255, 0, 255});
         text = textWon;
     }
     if(!playerBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING){
         setGameState(GAMESTATE::LOST);
-        Text textWon("../res/fonts/Unibody_8_Bold.ttf", 80, "You lost!", {255, 0, 0, 255});
+        Text textWon("../res/fonts/ubuntu.ttf", 80, "You lost!", {255, 0, 0, 255});
         text = textWon;
     }
     if((GAME_STATE == GAMESTATE::WON || GAME_STATE == GAMESTATE::LOST) && !backgroundExists){
@@ -323,6 +325,13 @@ void GameMaster::render() {
     for (auto& s : ships){
         s->draw();
     }
+//    titleText, *shiptypehelp, *shootrotate, *skip, *quit
+    turn->display((1600-turn->getRect().w)/2, 0);
+    titleText->display(15, (720+titleText->getRect().h*1));
+    shiptypehelp->display(15, (720+titleText->getRect().h*2));
+    shootrotate->display(15, (720+titleText->getRect().h*3));
+    skip->display(15, (720+titleText->getRect().h*4));
+    quit->display(15, (720+quit->getRect().h*5));
     for (auto& m : markings){
         m->draw();
     }
