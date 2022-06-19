@@ -4,6 +4,8 @@
 
 #include <plog/Log.h>
 #include "PlayerBoard.h"
+#include <random>
+#include <memory>
 
 FieldStatus PlayerBoard::getFieldStatus(int x, int y) {
     return Board[x][y];
@@ -70,6 +72,10 @@ void PlayerBoard::INITIALIZE_BOARD() {
 }
 
 bool PlayerBoard::canPlace(int x, int y, int rotation, const Ship &shipType) {
+    if ( x < 0 || y < 0 || x > BOARD_SIZE || y > BOARD_SIZE){
+        PLOGE << "[ERROR] Specified coordinates land outside board";
+        return false;
+    }
     if (!rotation%2){
         if( x + shipType.size > BOARD_SIZE ) {
             PLOGE << "[ERROR] Can't place the ship on coordinates (" + std::to_string(x) + ";" + std::to_string(y) + ") with rotation " + std::to_string(rotation) + ".\n Reason: SHIP LANDS OUTSIDE BOARD";
@@ -97,30 +103,53 @@ bool PlayerBoard::canPlace(int x, int y, int rotation, const Ship &shipType) {
     return true;
 }
 
-//PlayerBoard PlayerBoard::autoPlace(PlayerBoard& board, int index) {
-//    if (playerShips.shipsLeft() == 0){
-//        return board;
-//    }
-//    PlayerBoard tempBoard(this->playerShips);
-//    int rx{}, ry{}, rr{};
-//    srand((unsigned)time(nullptr));
-//    while (index-- > playerShips.shipsLeft()){
-//        rx = rand()%10;
-//        ry = rand()%10;
-//        rr = rand()%2;
-//        Ship type = playerShips.getShipType(shipIndices[index-1]).first;
-//
-//        if(canPlace(rx, ry, rr, type)){
-//            tempBoard.placeShip(rx, ry, rr, type);
-//            PLOGD << "Trying to place ship " << type.size << " at (" << rx << "," << ry << ") on board..";
-//            return autoPlace(tempBoard, index-1);
-//        }
-//        else{
-//            return tempBoard;
-//        }
-//    }
-//    return tempBoard;
-//}
+//1. Get next ship
+//2. Get random cell and orientation
+//3. Try to fit ship (find any conflicts)
+//3a. If ship doesn't fit there, **delete all ships and start over**
+//3b. If ship fits, get another ship (goto 1)
+
+int shipIndices[7] = { 0, 0, 1, 1, 2, 3, 4};
+
+std::random_device rd;
+std::mt19937 mt(rd());
+std::uniform_real_distribution<double> dist(0.0, 10.0);
+
+PlayerBoard *PlayerBoard::autoPlace(PlayerBoard& board, int index) {
+    if(tempBoard == nullptr){
+        tempBoard = new PlayerBoard(playerShips);
+    }
+    int currentShips = playerShips.shipsLeft();
+    if (currentShips == 0 || index == 0){
+        return &board;
+    }
+    Ship type = playerShips.getShipType(shipIndices[index-1]).first;
+    int rx, ry, rr;
+    rx = floor(dist(mt));
+    ry = floor(dist(mt));
+    rr = floor(dist(mt));
+    FieldStatus statusToSet = getFieldStatus(rx, ry);
+    while (!tempBoard->canPlace(rx, ry, rr, type) || statusToSet == Default || statusToSet == Unavailable){
+        PLOGD << "Trying to place ship of type " << type.name << " on field (" << rx << "," << ry << ") with rotation " << rr;
+        rx = floor(dist(mt));
+        ry = floor(dist(mt));
+        rr = floor(dist(mt));
+        statusToSet = getFieldStatus(rx, ry);
+    }
+    tempBoard->placeShip(rx, ry, rr, type);
+    if (playerShips.shipsLeft() == 0){
+        PLOGD << "Returning board...";
+        return tempBoard;
+    }
+    if(currentShips - 1 == playerShips.shipsLeft()){
+        PLOGD << "Going recursive...";
+        return autoPlace(reinterpret_cast<PlayerBoard &>(*tempBoard), index-1);
+    }
+    else{
+        PLOGD << "Returning nullptr...";
+        return nullptr;
+    }
+}
 
 void PlayerBoard::PrintBoardToLog(PlayerBoard board) {
     std::string temp{};

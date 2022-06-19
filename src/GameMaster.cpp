@@ -88,12 +88,21 @@ void GameMaster::init(const char *title, int xpos, int ypos, int width, int heig
     boardHoverMarker.getComponent<SpriteComponent>().setTransparent();
     boardHoverMarker.addGroup(groupMarkings);
 
-    for (int i = 0; i < BOARD_SIZE; i++){
-        for (int j = 0; j < BOARD_SIZE; j++){
-            aiBoard->setFieldStatus(i, j, AI_DEBUG[i][j]);
-        }
+//    for (int i = 0; i < BOARD_SIZE; i++){
+//        for (int j = 0; j < BOARD_SIZE; j++){
+//            aiBoard->setFieldStatus(i, j, AI_DEBUG[i][j]);
+//        }
+//    }
+    auto *tempBoard = aiBoard->autoPlace(*aiBoard);
+//    for (int i = 0; i < BOARD_SIZE; i++){
+//        for (int j = 0; j < BOARD_SIZE; j++){
+//            aiBoard->setFieldStatus(i, j, tempBoard->getFieldStatus(i, j));
+//        }
+//    }
+    aiBoard = tempBoard;
+    if(tempBoard == nullptr){
+        PLOGE << "Didn't generate random board";
     }
-    ai._debug_delete_ships();
 
     setGameState(GAMESTATE::PLACING);
 }

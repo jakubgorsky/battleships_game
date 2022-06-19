@@ -7,7 +7,7 @@
 
 #define SCREEN_WIDTH 1600
 #define SCREEN_HEIGHT 900
-#define SCREEN_TITLE "sonho poor"
+#define SCREEN_TITLE "Battleships Game - graduation project"
 #define FPS 60
 #define FRAME_DELAY (1000/FPS)
 

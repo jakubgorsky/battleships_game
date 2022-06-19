@@ -14,6 +14,7 @@ private:
     void INITIALIZE_BOARD();
     bool canPlace(int x, int y, int rotation, const Ship& shipType);
     Ships &playerShips;
+    PlayerBoard *tempBoard;
 public:
     PlayerBoard(Ships &playerShips) : playerShips(playerShips) {
         INITIALIZE_BOARD();
@@ -24,11 +25,13 @@ public:
     FieldStatus getFieldStatus(int x, int y);
     FieldStatus shootField(int x, int y);
     bool placeShip(int x, int y, int rotation, const Ship& shipType);
-    PlayerBoard autoPlace(PlayerBoard& board, int index = 8);
+    PlayerBoard* autoPlace(PlayerBoard &board, int index = 7);
 
     bool shipsAlive();
 
     void PrintBoardToLog(PlayerBoard board);
+
+    ~PlayerBoard() = default;
 };
 
 #endif //BATTLESHIPS_GAEM_PLAYERBOARD_H
