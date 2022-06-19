@@ -30,6 +30,7 @@ PlayerBoard *aiBoard = new PlayerBoard(ai);
 int shipType = 0;
 Entity &boardHoverMarker(manager.addEntity());
 bool backgroundExists = false;
+bool gameOver = false;
 
 void GameMaster::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
@@ -281,15 +282,17 @@ void GameMaster::handleEvents() {
 }
 
 void GameMaster::update() {
-    if(!aiBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING){
+    if(!aiBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING && !gameOver){
         setGameState(GAMESTATE::WON);
         Text textWon("../res/fonts/ubuntu.ttf", 80, "You won!", {0, 255, 0, 255});
         text = textWon;
+        gameOver = true;
     }
-    if(!playerBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING){
+    if(!playerBoard->shipsAlive() && GAME_STATE!=GAMESTATE::PLACING && !gameOver){
         setGameState(GAMESTATE::LOST);
         Text textWon("../res/fonts/ubuntu.ttf", 80, "You lost!", {255, 0, 0, 255});
         text = textWon;
+        gameOver = true;
     }
     if((GAME_STATE == GAMESTATE::WON || GAME_STATE == GAMESTATE::LOST) && !backgroundExists){
         Entity& background(manager.addEntity());
