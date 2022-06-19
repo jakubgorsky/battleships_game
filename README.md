@@ -9,14 +9,14 @@ I've opted for Battleships, the famous board game in which you place and then tr
 This is a very simple basis for a project but it quickly turned out to be very challenging. ~~As of now, there only exists the underlaying structure of the game as I am currently learning OpenGL (for curious people I have another repo for that very project)
 to make it fully GUI and work as, well, a game.~~
 
-I've managed to make the game. It lacks audio, menus, settings, proper AI and auto ship placement, but is fully playable.
+I've managed to make the game. It lacks audio, menus, settings, proper AI, but is fully playable.
 
 # TODO
 Soon-ish:
 - Audio
 - Menus
 - Proper AI
-- procedurally generated AI ship layout (and an option to generate one for player as well)
+- an option to generate one for player
 
 in the future:
 - Making it OpenGL
@@ -29,4 +29,3 @@ in the future:
 - themes
 - different layouts
 - whatever comes into my mind
-
